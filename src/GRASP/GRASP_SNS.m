@@ -1,31 +1,36 @@
 
-function [bestScore, bestNodes, totalIterations, bestFoundTime, totalEvaluated, totalValid, discardedCount] = GRASP_SNS(G, time, n, r, Cmax)
+function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax)
     % GRASP_SNS GRASP algorithm for Server Node Selection with Cmax constraint
     % Outputs:
     %   bestScore - best average shortest path length
     %   bestNodes - best solution found
     %   totalIterations - number of local improvement loops performed
     %   bestFoundTime - time when best solution was found
-    %   totalEvaluated - total number of unique solutions evaluated
-    %   totalValid - total number of valid solutions satisfying Cmax
-    %   discardedCount - number of solutions discarded due to Cmax violation
 
-    numNodes = numnodes(G);
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;
     bestFoundTime = 0;
-    discardedCount = 0;
     evaluatedSolutions = containers.Map();
-    totalEvaluated = 0;
-    totalValid = 0;
 
     globalStartTime = tic;
     D = distances(G);
 
-    while toc(globalStartTime) < time
-        [currentNodes, discardedCountGreedy] = GreedyRandomizedConstruction(G, D, n, r, Cmax);
-        discardedCount = discardedCount + discardedCountGreedy;
+    while true
+        elapsed = toc(globalStartTime);
+        if elapsed >= time
+            break;
+        end
+    
+        timeLeft = time - elapsed;
+        if timeLeft < 0.01  % margem mínima para executar algo útil
+            break;
+        end
+    
+        currentNodes = GreedyRandomizedConstruction(G, D, n, r, Cmax);
+        if toc(globalStartTime) >= time
+            break;
+        end
 
         if isempty(currentNodes) || length(unique(currentNodes)) < n
             continue;
@@ -36,60 +41,21 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime, totalEvaluated, 
             continue;
         end
 
-        totalEvaluated = totalEvaluated + 1;
-
         [currentScore, maxSP] = PerfSNS(G, currentNodes);
         if maxSP > Cmax
-            discardedCount = discardedCount + 1;
             continue;
         end
 
-        totalValid = totalValid + 1;
         evaluatedSolutions(key) = currentScore;
-
-        improved = true;
-        localIterations = 0;
-
-        while improved && (toc(globalStartTime) < time)
-            localIterations = localIterations + 1;
-            improved = false;
-            notSelected = setdiff(1:numNodes, currentNodes);
-            bestNeighborScore = currentScore;
-            bestSwap = [0, 0];
-
-            for i = 1:n
-                for j = 1:length(notSelected)
-                    neighborNodes = currentNodes;
-                    neighborNodes(i) = notSelected(j);
-                    neighborKey = mat2str(sort(neighborNodes));
-                    if isKey(evaluatedSolutions, neighborKey)
-                        continue;
-                    end
-
-                    totalEvaluated = totalEvaluated + 1;
-                    [neighborScore, neighborMaxSP] = PerfSNS(G, neighborNodes);
-                    if neighborMaxSP > Cmax
-                        discardedCount = discardedCount + 1;
-                        continue;
-                    end
-
-                    totalValid = totalValid + 1;
-                    evaluatedSolutions(neighborKey) = neighborScore;
-
-                    if neighborScore < bestNeighborScore
-                        bestNeighborScore = neighborScore;
-                        bestSwap = [i, notSelected(j)];
-                        improved = true;
-                    end
-                end
-            end
-
-            if improved
-                currentNodes(bestSwap(1)) = bestSwap(2);
-                currentScore = bestNeighborScore;
-                evaluatedSolutions(mat2str(sort(currentNodes))) = currentScore;
-            end
+        
+        % Checa tempo restante antes da busca local
+        if toc(globalStartTime) >= time
+            break;
         end
+
+        % --- Call local search function ---
+        [ currentNodes, currentScore, localIterations, ~, evaluatedSolutions ] = ...
+    LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, evaluatedSolutions, globalStartTime, time);
 
         totalIterations = totalIterations + localIterations;
 
@@ -102,7 +68,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime, totalEvaluated, 
 end
 
 
-function [nodes, discardedCount] = GreedyRandomizedConstruction(G, D, n, r, Cmax)
+function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
     % Generate a greedy randomized solution for the Server Node Selection problem
     % with Cmax constraint
     % Input:
@@ -117,7 +83,6 @@ function [nodes, discardedCount] = GreedyRandomizedConstruction(G, D, n, r, Cmax
     numNodes = numnodes(G);
     nodes = zeros(1, n);
     remaining = 1:numNodes;
-    discardedCount = 0;
     
     % Start with a random node with good centrality
     centrality = zeros(1, numNodes);
@@ -161,7 +126,6 @@ function [nodes, discardedCount] = GreedyRandomizedConstruction(G, D, n, r, Cmax
                 
                 % Skip this candidate if it violates Cmax
                 if maxDistBetweenServers > Cmax
-                    discardedCount = discardedCount + 1;
                     continue;
                 end
             end
@@ -216,5 +180,59 @@ function [nodes, discardedCount] = GreedyRandomizedConstruction(G, D, n, r, Cmax
     % Return empty array if no valid solution found
     if invalidSolution
         nodes = [];
+    end
+end
+
+function [bestNodes, bestScore, localIterations, improved, evaluatedSolutions] = ...
+    LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, evaluatedSolutions, globalStartTime, maxTime)
+
+    numNodes = numnodes(G);
+    localIterations = 0;
+    improved = true;
+    bestNodes = currentNodes;
+    bestScore = currentScore;
+
+    while improved && toc(globalStartTime) < maxTime
+        localIterations = localIterations + 1;
+        improved = false;
+        notSelected = setdiff(1:numNodes, bestNodes);
+        bestNeighborScore = bestScore;
+        bestSwap = [0, 0];
+
+        for i = 1:length(bestNodes)
+            for j = 1:length(notSelected)
+                if toc(globalStartTime) >= maxTime
+                    return;
+                end
+
+                neighborNodes = bestNodes;
+                neighborNodes(i) = notSelected(j);
+                neighborKey = mat2str(sort(neighborNodes));
+
+                if isKey(evaluatedSolutions, neighborKey)
+                    continue;
+                end
+
+                [neighborScore, neighborMaxSP] = PerfSNS(G, neighborNodes);
+
+                if neighborMaxSP > Cmax
+                    continue;
+                end
+
+                evaluatedSolutions(neighborKey) = neighborScore;
+
+                if neighborScore < bestNeighborScore
+                    bestNeighborScore = neighborScore;
+                    bestSwap = [i, notSelected(j)];
+                    improved = true;
+                end
+            end
+        end
+
+        if improved
+            bestNodes(bestSwap(1)) = bestSwap(2);
+            bestScore = bestNeighborScore;
+            evaluatedSolutions(mat2str(sort(bestNodes))) = bestScore;
+        end
     end
 end

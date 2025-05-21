@@ -7,10 +7,10 @@ clear; clc;
 
 % --- Parâmetros do problema ---
 n = 12;
-time = 10;
+time = 30;
 Cmax = 1000;
-numRuns = 30;
-rValues = [1, 2, 3, 5, 7, 10];
+numRuns = 10;
+rValues = [1, 2, 3, 5, 7, 10, 20, 50];
 
 % --- Carregamento dos dados ---
 Nodes = load('Nodes200.txt');
@@ -30,7 +30,7 @@ for idx = 1:length(rValues)
     fprintf('\n--- r = %d ---\n', r);
 
     for i = 1:numRuns
-        [score, nodes, ~, foundTime, ~, ~, ~] = GRASP_SNS(G, time, n, r, Cmax);
+        [score, nodes, ~, foundTime] = GRASP_SNS(G, time, n, r, Cmax);
         [avgSP, ~] = PerfSNS(G, nodes);
         scores(i) = avgSP;
         times(i) = foundTime;

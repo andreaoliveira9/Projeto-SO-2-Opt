@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, totalValid, discardedCount] = GA_SNS(G, time, n, populationSize, mutationProb, elitistParam, Cmax)
+function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n, populationSize, mutationProb, elitistParam, Cmax)
     % GA_SNS Genetic Algorithm for Server Node Selection problem
     % Input:
     %   G - graph of the network
@@ -13,9 +13,6 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
     %   bestNodes - list of selected nodes
     %   generations - number of generations created
     %   bestFoundTime - time when the best solution was found
-    %   totalEvaluated - total number of unique solutions evaluated
-    %   totalValid - number of valid solutions satisfying Cmax
-    %   discardedCount - number of solutions discarded due to Cmax
     
     numNodes = numnodes(G);
     bestScore = Inf;
@@ -23,9 +20,6 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
     bestFoundTime = 0;
     evaluatedCache = containers.Map();
     startTime = tic;
-    totalEvaluated = 0;
-    totalValid = 0;
-    discardedCount = 0;
     
     population = cell(populationSize, 1);
     fitness = zeros(populationSize, 1);
@@ -44,9 +38,7 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
         end
         
         % Check if solution is feasible (maxSP <= Cmax)
-        totalEvaluated = totalEvaluated + 1;
         if maxSP <= Cmax
-            totalValid = totalValid + 1;
             feasible(i) = true;
             fitness(i) = avgSP;
             
@@ -56,7 +48,6 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
                 bestFoundTime = toc(startTime);
             end
         else
-            discardedCount = discardedCount + 1;
             % If infeasible, penalize the fitness
             fitness(i) = avgSP + (maxSP - Cmax); % Penalty proportional to constraint violation
         end
@@ -64,12 +55,25 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
     
     generations = 1;
     
-    while toc(startTime) < time
+    while true
+        elapsed = toc(startTime);
+        if elapsed >= time
+            break;
+        end
+    
+        timeLeft = time - elapsed;
+        if timeLeft < 0.01  % margem de segurança mínima para uma geração
+            break;
+        end
+
         offspringPopulation = cell(populationSize, 1);
         offspringFitness = zeros(populationSize, 1);
         offspringFeasible = false(populationSize, 1);
     
         for i = 1:populationSize
+            if toc(startTime) >= time
+                break;
+            end
             % Tournament selection favors feasible solutions
             parent1Idx = tournamentSelection(fitness, feasible);
             parent2Idx = tournamentSelection(fitness, feasible);
@@ -89,14 +93,15 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
                 avgSP = evaluatedCache(key).avgSP;
                 maxSP = evaluatedCache(key).maxSP;
             else
+                if toc(startTime) >= time
+                    break;
+                end
                 [avgSP, maxSP] = PerfSNS(G, child);
                 evaluatedCache(key) = struct('avgSP', avgSP, 'maxSP', maxSP);
             end
             
             % Check if solution is feasible (maxSP <= Cmax)
-            totalEvaluated = totalEvaluated + 1;
             if maxSP <= Cmax
-                totalValid = totalValid + 1;
                 offspringFeasible(i) = true;
                 offspringFitness(i) = avgSP;
                 
@@ -106,10 +111,13 @@ function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, tota
                     bestFoundTime = toc(startTime);
                 end
             else
-                discardedCount = discardedCount + 1;
                 % If infeasible, penalize the fitness
                 offspringFitness(i) = avgSP + (maxSP - Cmax); % Penalty proportional to constraint violation
             end
+        end
+
+        if toc(startTime) >= time
+            break;
         end
     
         % Elitism: Keep top elitistParam solutions from previous generation

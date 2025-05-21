@@ -7,9 +7,9 @@ clear; clc;
 
 % --- Parâmetros do problema ---
 n = 12;
-time = 10;
+time = 30;
 Cmax = 1000;
-numRuns = 30;
+numRuns = 10;
 populationSizes = [20, 50, 100, 150];
 mutationProbs = [0.05, 0.1, 0.2];
 elitistParams = [1, 5, 10];
@@ -33,9 +33,10 @@ for p = populationSizes
             evaluations = zeros(1, numRuns);
             validCounts = zeros(1, numRuns);
             discards = zeros(1, numRuns);
+            fprintf('\n--- Pop=%d Mut=%.2f Elite=%d ---\n', p, m, e);
 
-            parfor i = 1:numRuns
-                [score, nodes, ~, foundTime, ~, ~, ~] = GA_SNS(G, time, n, p, m, e, Cmax);
+            for i = 1:numRuns
+                [score, nodes, ~, foundTime] = GA_SNS(G, time, n, p, m, e, Cmax);
                 [avgSP, ~] = PerfSNS(G, nodes);
                 scores(i) = avgSP;
                 times(i) = foundTime;
@@ -50,17 +51,6 @@ for p = populationSizes
                 p, m, e, min(scores), mean(scores), max(scores), mean(times));
         end
     end
-end
-
-% --- Tabela final ---
-fprintf('\n================== Resultados Finais GA ==================\n');
-fprintf('Pop | Mut | Elite | MinSP | MedSP | MaxSP | Tempo\n');
-fprintf('-------------------------------------------------------------------------------\n');
-for i = 1:size(results,1)
-    fprintf('%3d | %.2f | %5d | %6.2f | %6.2f | %6.2f | %5.2f\n', ...
-        results(i,1), results(i,2), results(i,3), ...
-        results(i,4), results(i,5), results(i,6), ...
-        results(i,7));
 end
 
 % --- Tabela final ---
