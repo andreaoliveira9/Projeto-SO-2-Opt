@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n, populationSize, mutationProb, elitistParam, Cmax)
+function [bestScore, bestNodes, generations, bestFoundTime, totalEvaluated, totalValid, discardedCount] = GA_SNS(G, time, n, populationSize, mutationProb, elitistParam, Cmax)
     % GA_SNS Genetic Algorithm for Server Node Selection problem
     % Input:
     %   G - graph of the network
@@ -13,12 +13,19 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
     %   bestNodes - list of selected nodes
     %   generations - number of generations created
     %   bestFoundTime - time when the best solution was found
+    %   totalEvaluated - total number of unique solutions evaluated
+    %   totalValid - number of valid solutions satisfying Cmax
+    %   discardedCount - number of solutions discarded due to Cmax
     
     numNodes = numnodes(G);
     bestScore = Inf;
     bestNodes = [];
     bestFoundTime = 0;
+    evaluatedCache = containers.Map();
     startTime = tic;
+    totalEvaluated = 0;
+    totalValid = 0;
+    discardedCount = 0;
     
     population = cell(populationSize, 1);
     fitness = zeros(populationSize, 1);
@@ -27,10 +34,19 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
     % Initialize population
     for i = 1:populationSize
         population{i} = randperm(numNodes, n);
-        [avgSP, maxSP] = PerfSNS(G, population{i});
+        key = mat2str(sort(population{i}));
+        if isKey(evaluatedCache, key)
+            avgSP = evaluatedCache(key).avgSP;
+            maxSP = evaluatedCache(key).maxSP;
+        else
+            [avgSP, maxSP] = PerfSNS(G, population{i});
+            evaluatedCache(key) = struct('avgSP', avgSP, 'maxSP', maxSP);
+        end
         
         % Check if solution is feasible (maxSP <= Cmax)
+        totalEvaluated = totalEvaluated + 1;
         if maxSP <= Cmax
+            totalValid = totalValid + 1;
             feasible(i) = true;
             fitness(i) = avgSP;
             
@@ -40,6 +56,7 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
                 bestFoundTime = toc(startTime);
             end
         else
+            discardedCount = discardedCount + 1;
             % If infeasible, penalize the fitness
             fitness(i) = avgSP + (maxSP - Cmax); % Penalty proportional to constraint violation
         end
@@ -67,10 +84,19 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
             end
     
             offspringPopulation{i} = child;
-            [avgSP, maxSP] = PerfSNS(G, child);
+            key = mat2str(sort(child));
+            if isKey(evaluatedCache, key)
+                avgSP = evaluatedCache(key).avgSP;
+                maxSP = evaluatedCache(key).maxSP;
+            else
+                [avgSP, maxSP] = PerfSNS(G, child);
+                evaluatedCache(key) = struct('avgSP', avgSP, 'maxSP', maxSP);
+            end
             
             % Check if solution is feasible (maxSP <= Cmax)
+            totalEvaluated = totalEvaluated + 1;
             if maxSP <= Cmax
+                totalValid = totalValid + 1;
                 offspringFeasible(i) = true;
                 offspringFitness(i) = avgSP;
                 
@@ -80,6 +106,7 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
                     bestFoundTime = toc(startTime);
                 end
             else
+                discardedCount = discardedCount + 1;
                 % If infeasible, penalize the fitness
                 offspringFitness(i) = avgSP + (maxSP - Cmax); % Penalty proportional to constraint violation
             end

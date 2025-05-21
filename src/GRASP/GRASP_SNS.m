@@ -1,96 +1,98 @@
-function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_with_Cmax(G, time, n, r, Cmax)
-    % GRASP_SNS_with_Cmax GRASP algorithm for Server Node Selection with Cmax constraint
-    % Input:
-    %   G - graph of the network
-    %   time - time to run the method (in seconds)
-    %   n - number of nodes to include in a solution
-    %   r - size of Restricted Candidate List (RCL)
-    %   Cmax - maximum allowed shortest path length between any pair of server nodes
-    % Output:
+
+function [bestScore, bestNodes, totalIterations, bestFoundTime, totalEvaluated, totalValid, discardedCount] = GRASP_SNS(G, time, n, r, Cmax)
+    % GRASP_SNS GRASP algorithm for Server Node Selection with Cmax constraint
+    % Outputs:
     %   bestScore - best average shortest path length
-    %   bestNodes - list of selected nodes
-    %   totalIterations - total number of iterations across all runs
-    %   bestFoundTime - time when the best solution was found
-    
-    % Get the number of nodes in the graph
+    %   bestNodes - best solution found
+    %   totalIterations - number of local improvement loops performed
+    %   bestFoundTime - time when best solution was found
+    %   totalEvaluated - total number of unique solutions evaluated
+    %   totalValid - total number of valid solutions satisfying Cmax
+    %   discardedCount - number of solutions discarded due to Cmax violation
+
     numNodes = numnodes(G);
-    
-    % Initialize best solution
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;
     bestFoundTime = 0;
-    
-    % Record start time
+    discardedCount = 0;
+    evaluatedSolutions = containers.Map();
+    totalEvaluated = 0;
+    totalValid = 0;
+
     globalStartTime = tic;
-    
-    % Precompute distances matrix
     D = distances(G);
-    
-    % GRASP loop
+
     while toc(globalStartTime) < time
-        % Greedy randomized construction phase
-        currentNodes = GreedyRandomizedConstruction(G, D, n, r, Cmax);
-        
-        % Skip this iteration if no feasible solution was found during construction
-        if isempty(currentNodes)
+        [currentNodes, discardedCountGreedy] = GreedyRandomizedConstruction(G, D, n, r, Cmax);
+        discardedCount = discardedCount + discardedCountGreedy;
+
+        if isempty(currentNodes) || length(unique(currentNodes)) < n
             continue;
         end
-        
-        % Evaluate the current solution
+
+        key = mat2str(sort(currentNodes));
+        if isKey(evaluatedSolutions, key)
+            continue;
+        end
+
+        totalEvaluated = totalEvaluated + 1;
+
         [currentScore, maxSP] = PerfSNS(G, currentNodes);
-        
-        % Skip if not satisfying Cmax constraint
         if maxSP > Cmax
+            discardedCount = discardedCount + 1;
             continue;
         end
-        
-        % Local improvement loop (SA-HC)
+
+        totalValid = totalValid + 1;
+        evaluatedSolutions(key) = currentScore;
+
         improved = true;
         localIterations = 0;
-        
+
         while improved && (toc(globalStartTime) < time)
             localIterations = localIterations + 1;
             improved = false;
-            
-            % Get all nodes not in the current solution
             notSelected = setdiff(1:numNodes, currentNodes);
-            
             bestNeighborScore = currentScore;
-            bestSwap = [0, 0]; % [index in currentNodes, node from notSelected]
-            validNeighborFound = false;
-            
-            % Evaluate all possible swaps (exhaustive neighborhood search)
+            bestSwap = [0, 0];
+
             for i = 1:n
                 for j = 1:length(notSelected)
-                    % Create neighbor by swapping one node
                     neighborNodes = currentNodes;
                     neighborNodes(i) = notSelected(j);
-                    
-                    % Check if the neighbor satisfies Cmax constraint
+                    neighborKey = mat2str(sort(neighborNodes));
+                    if isKey(evaluatedSolutions, neighborKey)
+                        continue;
+                    end
+
+                    totalEvaluated = totalEvaluated + 1;
                     [neighborScore, neighborMaxSP] = PerfSNS(G, neighborNodes);
-                    
-                    % Only consider neighbors that satisfy Cmax constraint
-                    if neighborMaxSP <= Cmax && neighborScore < bestNeighborScore
+                    if neighborMaxSP > Cmax
+                        discardedCount = discardedCount + 1;
+                        continue;
+                    end
+
+                    totalValid = totalValid + 1;
+                    evaluatedSolutions(neighborKey) = neighborScore;
+
+                    if neighborScore < bestNeighborScore
                         bestNeighborScore = neighborScore;
-                        bestSwap = [i, j];
+                        bestSwap = [i, notSelected(j)];
                         improved = true;
-                        validNeighborFound = true;
                     end
                 end
             end
-            
-            % Apply the best swap if it improves the solution and respects constraints
-            if validNeighborFound
-                currentNodes(bestSwap(1)) = notSelected(bestSwap(2));
+
+            if improved
+                currentNodes(bestSwap(1)) = bestSwap(2);
                 currentScore = bestNeighborScore;
+                evaluatedSolutions(mat2str(sort(currentNodes))) = currentScore;
             end
         end
-        
-        % Update total iterations
+
         totalIterations = totalIterations + localIterations;
-        
-        % Update best solution if this run was better
+
         if currentScore < bestScore
             bestScore = currentScore;
             bestNodes = currentNodes;
@@ -99,7 +101,8 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_with
     end
 end
 
-function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
+
+function [nodes, discardedCount] = GreedyRandomizedConstruction(G, D, n, r, Cmax)
     % Generate a greedy randomized solution for the Server Node Selection problem
     % with Cmax constraint
     % Input:
@@ -114,6 +117,7 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
     numNodes = numnodes(G);
     nodes = zeros(1, n);
     remaining = 1:numNodes;
+    discardedCount = 0;
     
     % Start with a random node with good centrality
     centrality = zeros(1, numNodes);
@@ -157,6 +161,7 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
                 
                 % Skip this candidate if it violates Cmax
                 if maxDistBetweenServers > Cmax
+                    discardedCount = discardedCount + 1;
                     continue;
                 end
             end
