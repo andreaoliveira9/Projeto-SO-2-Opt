@@ -7,9 +7,9 @@ clear; clc;
 
 % --- Parâmetros do problema ---
 n = 12;
-time = 30;
+time = 10;
 Cmax = 1000;
-numRuns = 10;
+numRuns = 30;
 rValues = [1, 2, 3, 5, 7, 10];
 
 % --- Carregamento dos dados ---
@@ -27,7 +27,7 @@ for idx = 1:length(rValues)
     r = rValues(idx);
     scores = zeros(1, numRuns);
     times = zeros(1, numRuns);
-    fprintf('--- r = %d ---\n', r);
+    fprintf('\n--- r = %d ---\n', r);
 
     for i = 1:numRuns
         [score, nodes, ~, foundTime, ~, ~, ~] = GRASP_SNS(G, time, n, r, Cmax);
@@ -44,7 +44,7 @@ for idx = 1:length(rValues)
 end
 
 % --- Tabela final ---
-fprintf('\\n==================== Resultados Finais ====================\n');
+fprintf('\n==================== Resultados Finais ====================\n');
 fprintf(' r |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s)\n');
 fprintf('------------------------------------------------------------\n');
 for i = 1:size(results,1)
