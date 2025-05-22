@@ -1,0 +1,1229 @@
+Testando diferentes configurações de parâmetros GA...
+
+--- Pop=20 Mut=0.05 Elite=1 ---
+Run 1: SP = 152.1000 | Tempo = 6.24s
+Run 2: SP = 147.1750 | Tempo = 7.95s
+Run 3: SP = 148.4950 | Tempo = 4.96s
+Run 4: SP = 148.7350 | Tempo = 7.01s
+Run 5: SP = 148.8500 | Tempo = 9.13s
+Run 6: SP = 144.7450 | Tempo = 9.96s
+Run 7: SP = 143.0850 | Tempo = 7.93s
+Run 8: SP = 148.5550 | Tempo = 4.98s
+Run 9: SP = 147.3850 | Tempo = 6.89s
+Run 10: SP = 148.3700 | Tempo = 9.56s
+Run 11: SP = 147.8600 | Tempo = 3.47s
+Run 12: SP = 151.5550 | Tempo = 5.43s
+Run 13: SP = 146.1300 | Tempo = 6.81s
+Run 14: SP = 147.8950 | Tempo = 7.06s
+Run 15: SP = 147.7800 | Tempo = 8.28s
+Run 16: SP = 146.1900 | Tempo = 4.07s
+Run 17: SP = 144.6600 | Tempo = 5.62s
+Run 18: SP = 143.4050 | Tempo = 9.49s
+Run 19: SP = 151.3500 | Tempo = 7.66s
+Run 20: SP = 143.4050 | Tempo = 5.43s
+Run 21: SP = 143.0850 | Tempo = 8.64s
+Run 22: SP = 143.3100 | Tempo = 7.53s
+Run 23: SP = 149.1850 | Tempo = 6.68s
+Run 24: SP = 147.4950 | Tempo = 6.30s
+Run 25: SP = 147.4800 | Tempo = 6.56s
+Run 26: SP = 148.8500 | Tempo = 5.51s
+Run 27: SP = 149.1550 | Tempo = 4.33s
+Run 28: SP = 146.0900 | Tempo = 5.53s
+Run 29: SP = 147.1050 | Tempo = 8.86s
+Run 30: SP = 145.5250 | Tempo = 6.32s
+Resumo para Pop=20 Mut=0.05 Elite=1 -> Min: 143.0850 | Média: 147.1668 | Max: 152.1000 | Tempo médio: 6.8054
+
+--- Pop=20 Mut=0.05 Elite=5 ---
+Run 1: SP = 147.3650 | Tempo = 9.66s
+Run 2: SP = 148.3400 | Tempo = 3.68s
+Run 3: SP = 146.2250 | Tempo = 8.96s
+Run 4: SP = 143.8850 | Tempo = 4.73s
+Run 5: SP = 145.4450 | Tempo = 3.10s
+Run 6: SP = 145.2550 | Tempo = 7.60s
+Run 7: SP = 146.8150 | Tempo = 9.14s
+Run 8: SP = 147.6000 | Tempo = 2.91s
+Run 9: SP = 146.1300 | Tempo = 1.12s
+Run 10: SP = 147.4800 | Tempo = 6.77s
+Run 11: SP = 147.1600 | Tempo = 4.26s
+Run 12: SP = 147.1100 | Tempo = 6.10s
+Run 13: SP = 147.3650 | Tempo = 8.88s
+Run 14: SP = 144.0350 | Tempo = 5.05s
+Run 15: SP = 148.3400 | Tempo = 3.40s
+Run 16: SP = 151.1550 | Tempo = 9.29s
+Run 17: SP = 143.4050 | Tempo = 9.10s
+Run 18: SP = 145.7150 | Tempo = 3.91s
+Run 19: SP = 143.6350 | Tempo = 8.49s
+Run 20: SP = 144.5700 | Tempo = 3.19s
+Run 21: SP = 147.4800 | Tempo = 7.83s
+Run 22: SP = 149.8950 | Tempo = 1.12s
+Run 23: SP = 152.3550 | Tempo = 5.45s
+Run 24: SP = 143.6350 | Tempo = 6.72s
+Run 25: SP = 147.4800 | Tempo = 5.22s
+Run 26: SP = 145.9250 | Tempo = 4.20s
+Run 27: SP = 147.1000 | Tempo = 5.41s
+Run 28: SP = 151.7700 | Tempo = 9.76s
+Run 29: SP = 143.4050 | Tempo = 7.20s
+Run 30: SP = 147.1750 | Tempo = 3.63s
+Resumo para Pop=20 Mut=0.05 Elite=5 -> Min: 143.4050 | Média: 146.7750 | Max: 152.3550 | Tempo médio: 5.8628
+
+--- Pop=20 Mut=0.05 Elite=10 ---
+Run 1: SP = 145.7200 | Tempo = 6.76s
+Run 2: SP = 152.6600 | Tempo = 6.11s
+Run 3: SP = 147.6250 | Tempo = 5.11s
+Run 4: SP = 147.4800 | Tempo = 8.76s
+Run 5: SP = 146.8800 | Tempo = 9.13s
+Run 6: SP = 144.6950 | Tempo = 5.49s
+Run 7: SP = 147.9500 | Tempo = 8.31s
+Run 8: SP = 146.0100 | Tempo = 9.15s
+Run 9: SP = 148.3400 | Tempo = 7.79s
+Run 10: SP = 151.0100 | Tempo = 6.22s
+Run 11: SP = 144.4900 | Tempo = 7.23s
+Run 12: SP = 150.1450 | Tempo = 3.22s
+Run 13: SP = 144.4400 | Tempo = 6.15s
+Run 14: SP = 147.8950 | Tempo = 6.75s
+Run 15: SP = 146.1450 | Tempo = 9.70s
+Run 16: SP = 145.5550 | Tempo = 5.56s
+Run 17: SP = 146.8650 | Tempo = 7.62s
+Run 18: SP = 144.6600 | Tempo = 3.58s
+Run 19: SP = 146.1850 | Tempo = 5.69s
+Run 20: SP = 147.5450 | Tempo = 7.46s
+Run 21: SP = 151.2350 | Tempo = 9.48s
+Run 22: SP = 148.8300 | Tempo = 6.96s
+Run 23: SP = 153.8950 | Tempo = 7.59s
+Run 24: SP = 159.9350 | Tempo = 3.90s
+Run 25: SP = 149.8050 | Tempo = 3.11s
+Run 26: SP = 143.9000 | Tempo = 8.26s
+Run 27: SP = 146.1750 | Tempo = 6.12s
+Run 28: SP = 146.1200 | Tempo = 7.06s
+Run 29: SP = 143.4050 | Tempo = 5.92s
+Run 30: SP = 147.2400 | Tempo = 2.51s
+Resumo para Pop=20 Mut=0.05 Elite=10 -> Min: 143.4050 | Média: 147.7612 | Max: 159.9350 | Tempo médio: 6.5568
+
+--- Pop=20 Mut=0.10 Elite=1 ---
+Run 1: SP = 145.5050 | Tempo = 9.95s
+Run 2: SP = 147.4850 | Tempo = 7.52s
+Run 3: SP = 146.2250 | Tempo = 3.19s
+Run 4: SP = 144.4900 | Tempo = 6.53s
+Run 5: SP = 154.0950 | Tempo = 7.72s
+Run 6: SP = 146.8650 | Tempo = 4.16s
+Run 7: SP = 147.8950 | Tempo = 7.23s
+Run 8: SP = 147.3350 | Tempo = 8.21s
+Run 9: SP = 144.2350 | Tempo = 9.52s
+Run 10: SP = 148.2100 | Tempo = 9.95s
+Run 11: SP = 148.4950 | Tempo = 7.83s
+Run 12: SP = 147.9650 | Tempo = 9.76s
+Run 13: SP = 145.8750 | Tempo = 7.30s
+Run 14: SP = 147.4850 | Tempo = 8.15s
+Run 15: SP = 144.4900 | Tempo = 6.74s
+Run 16: SP = 147.4800 | Tempo = 6.21s
+Run 17: SP = 145.5250 | Tempo = 6.90s
+Run 18: SP = 148.4950 | Tempo = 4.64s
+Run 19: SP = 147.4850 | Tempo = 4.05s
+Run 20: SP = 147.4800 | Tempo = 5.36s
+Run 21: SP = 147.4800 | Tempo = 5.10s
+Run 22: SP = 152.1850 | Tempo = 6.49s
+Run 23: SP = 146.1850 | Tempo = 9.54s
+Run 24: SP = 148.5550 | Tempo = 6.53s
+Run 25: SP = 147.1050 | Tempo = 6.58s
+Run 26: SP = 148.5550 | Tempo = 6.28s
+Run 27: SP = 143.4050 | Tempo = 8.00s
+Run 28: SP = 144.7450 | Tempo = 5.38s
+Run 29: SP = 143.5600 | Tempo = 8.25s
+Run 30: SP = 143.3700 | Tempo = 9.86s
+Resumo para Pop=20 Mut=0.10 Elite=1 -> Min: 143.3700 | Média: 146.9420 | Max: 154.0950 | Tempo médio: 7.0971
+
+--- Pop=20 Mut=0.10 Elite=5 ---
+Run 1: SP = 146.8550 | Tempo = 3.17s
+Run 2: SP = 146.1850 | Tempo = 3.37s
+Run 3: SP = 145.4450 | Tempo = 1.54s
+Run 4: SP = 145.8750 | Tempo = 3.61s
+Run 5: SP = 143.4050 | Tempo = 8.94s
+Run 6: SP = 146.0600 | Tempo = 1.64s
+Run 7: SP = 146.6750 | Tempo = 5.07s
+Run 8: SP = 147.4850 | Tempo = 3.44s
+Run 9: SP = 143.0850 | Tempo = 9.02s
+Run 10: SP = 144.6600 | Tempo = 2.22s
+Run 11: SP = 147.8850 | Tempo = 1.95s
+Run 12: SP = 146.2250 | Tempo = 5.11s
+Run 13: SP = 143.4050 | Tempo = 5.80s
+Run 14: SP = 145.2550 | Tempo = 2.96s
+Run 15: SP = 146.6750 | Tempo = 2.58s
+Run 16: SP = 149.2800 | Tempo = 1.72s
+Run 17: SP = 149.8950 | Tempo = 6.42s
+Run 18: SP = 146.4350 | Tempo = 3.47s
+Run 19: SP = 148.8500 | Tempo = 4.45s
+Run 20: SP = 143.4050 | Tempo = 5.41s
+Run 21: SP = 146.1850 | Tempo = 3.09s
+Run 22: SP = 146.4750 | Tempo = 5.90s
+Run 23: SP = 143.6350 | Tempo = 6.87s
+Run 24: SP = 145.2550 | Tempo = 7.82s
+Run 25: SP = 149.4100 | Tempo = 2.76s
+Run 26: SP = 146.8650 | Tempo = 5.09s
+Run 27: SP = 148.8500 | Tempo = 2.06s
+Run 28: SP = 144.8100 | Tempo = 2.76s
+Run 29: SP = 148.4550 | Tempo = 9.05s
+Run 30: SP = 143.0850 | Tempo = 4.15s
+Resumo para Pop=20 Mut=0.10 Elite=5 -> Min: 143.0850 | Média: 146.2022 | Max: 149.8950 | Tempo médio: 4.3811
+
+--- Pop=20 Mut=0.10 Elite=10 ---
+Run 1: SP = 144.4400 | Tempo = 6.91s
+Run 2: SP = 143.8850 | Tempo = 5.97s
+Run 3: SP = 146.1850 | Tempo = 6.58s
+Run 4: SP = 146.1850 | Tempo = 8.96s
+Run 5: SP = 146.7550 | Tempo = 3.09s
+Run 6: SP = 144.4400 | Tempo = 5.42s
+Run 7: SP = 147.9150 | Tempo = 6.11s
+Run 8: SP = 148.8300 | Tempo = 8.97s
+Run 9: SP = 152.6400 | Tempo = 0.96s
+Run 10: SP = 147.8950 | Tempo = 2.88s
+Run 11: SP = 148.8850 | Tempo = 7.53s
+Run 12: SP = 146.2250 | Tempo = 4.54s
+Run 13: SP = 147.1750 | Tempo = 1.95s
+Run 14: SP = 143.1600 | Tempo = 4.63s
+Run 15: SP = 146.1700 | Tempo = 2.26s
+Run 16: SP = 152.1300 | Tempo = 2.88s
+Run 17: SP = 143.0850 | Tempo = 3.64s
+Run 18: SP = 147.4800 | Tempo = 7.75s
+Run 19: SP = 148.8700 | Tempo = 1.52s
+Run 20: SP = 143.1600 | Tempo = 5.94s
+Run 21: SP = 147.3800 | Tempo = 2.55s
+Run 22: SP = 149.8950 | Tempo = 5.00s
+Run 23: SP = 145.7000 | Tempo = 5.85s
+Run 24: SP = 147.6650 | Tempo = 4.12s
+Run 25: SP = 146.7500 | Tempo = 3.24s
+Run 26: SP = 146.2250 | Tempo = 5.07s
+Run 27: SP = 146.9100 | Tempo = 4.62s
+Run 28: SP = 146.4350 | Tempo = 3.48s
+Run 29: SP = 146.4500 | Tempo = 5.39s
+Run 30: SP = 150.5000 | Tempo = 1.85s
+Resumo para Pop=20 Mut=0.10 Elite=10 -> Min: 143.0850 | Média: 146.9807 | Max: 152.6400 | Tempo médio: 4.6551
+
+--- Pop=20 Mut=0.20 Elite=1 ---
+Run 1: SP = 147.7850 | Tempo = 4.75s
+Run 2: SP = 146.4850 | Tempo = 3.64s
+Run 3: SP = 147.6550 | Tempo = 5.76s
+Run 4: SP = 146.3800 | Tempo = 8.67s
+Run 5: SP = 146.1700 | Tempo = 8.83s
+Run 6: SP = 147.6850 | Tempo = 8.83s
+Run 7: SP = 146.3650 | Tempo = 9.74s
+Run 8: SP = 149.8500 | Tempo = 8.46s
+Run 9: SP = 147.6250 | Tempo = 9.95s
+Run 10: SP = 147.4800 | Tempo = 7.52s
+Run 11: SP = 147.6850 | Tempo = 9.48s
+Run 12: SP = 145.4650 | Tempo = 8.02s
+Run 13: SP = 145.3350 | Tempo = 7.07s
+Run 14: SP = 144.6250 | Tempo = 7.73s
+Run 15: SP = 151.0850 | Tempo = 9.78s
+Run 16: SP = 143.4050 | Tempo = 7.99s
+Run 17: SP = 143.6200 | Tempo = 9.15s
+Run 18: SP = 147.4800 | Tempo = 7.64s
+Run 19: SP = 151.7550 | Tempo = 8.89s
+Run 20: SP = 147.4200 | Tempo = 8.53s
+Run 21: SP = 143.2350 | Tempo = 6.17s
+Run 22: SP = 143.8450 | Tempo = 9.37s
+Run 23: SP = 144.7400 | Tempo = 7.20s
+Run 24: SP = 144.7950 | Tempo = 5.21s
+Run 25: SP = 148.5850 | Tempo = 8.68s
+Run 26: SP = 143.0850 | Tempo = 8.42s
+Run 27: SP = 147.8400 | Tempo = 7.76s
+Run 28: SP = 150.0550 | Tempo = 5.64s
+Run 29: SP = 146.6500 | Tempo = 6.73s
+Run 30: SP = 143.4050 | Tempo = 4.33s
+Resumo para Pop=20 Mut=0.20 Elite=1 -> Min: 143.0850 | Média: 146.5863 | Max: 151.7550 | Tempo médio: 7.6648
+
+--- Pop=20 Mut=0.20 Elite=5 ---
+Run 1: SP = 148.5150 | Tempo = 0.94s
+Run 2: SP = 146.8650 | Tempo = 1.49s
+Run 3: SP = 143.0850 | Tempo = 2.86s
+Run 4: SP = 147.6650 | Tempo = 2.11s
+Run 5: SP = 144.6600 | Tempo = 1.94s
+Run 6: SP = 145.5550 | Tempo = 3.19s
+Run 7: SP = 143.1600 | Tempo = 3.83s
+Run 8: SP = 156.0600 | Tempo = 1.30s
+Run 9: SP = 147.5100 | Tempo = 2.06s
+Run 10: SP = 144.4900 | Tempo = 2.69s
+Run 11: SP = 147.9300 | Tempo = 3.17s
+Run 12: SP = 148.5350 | Tempo = 2.95s
+Run 13: SP = 144.4400 | Tempo = 2.20s
+Run 14: SP = 145.2550 | Tempo = 3.69s
+Run 15: SP = 147.4800 | Tempo = 2.31s
+Run 16: SP = 147.4050 | Tempo = 4.14s
+Run 17: SP = 149.0500 | Tempo = 2.44s
+Run 18: SP = 147.4800 | Tempo = 4.03s
+Run 19: SP = 145.0050 | Tempo = 1.78s
+Run 20: SP = 147.5450 | Tempo = 1.10s
+Run 21: SP = 147.4800 | Tempo = 3.93s
+Run 22: SP = 145.7000 | Tempo = 2.06s
+Run 23: SP = 148.9150 | Tempo = 2.80s
+Run 24: SP = 143.4050 | Tempo = 2.37s
+Run 25: SP = 146.1200 | Tempo = 1.91s
+Run 26: SP = 143.4050 | Tempo = 3.17s
+Run 27: SP = 143.1600 | Tempo = 1.29s
+Run 28: SP = 147.4850 | Tempo = 1.98s
+Run 29: SP = 145.7150 | Tempo = 1.03s
+Run 30: SP = 146.7400 | Tempo = 3.28s
+Resumo para Pop=20 Mut=0.20 Elite=5 -> Min: 143.0850 | Média: 146.5272 | Max: 156.0600 | Tempo médio: 2.4685
+
+--- Pop=20 Mut=0.20 Elite=10 ---
+Run 1: SP = 146.6400 | Tempo = 2.97s
+Run 2: SP = 144.5200 | Tempo = 1.94s
+Run 3: SP = 150.2000 | Tempo = 1.73s
+Run 4: SP = 147.4050 | Tempo = 4.74s
+Run 5: SP = 147.4800 | Tempo = 3.24s
+Run 6: SP = 145.2550 | Tempo = 3.88s
+Run 7: SP = 150.2750 | Tempo = 1.90s
+Run 8: SP = 150.2650 | Tempo = 1.69s
+Run 9: SP = 147.4800 | Tempo = 3.08s
+Run 10: SP = 143.9000 | Tempo = 1.49s
+Run 11: SP = 143.4050 | Tempo = 2.72s
+Run 12: SP = 145.8550 | Tempo = 1.69s
+Run 13: SP = 147.5450 | Tempo = 3.00s
+Run 14: SP = 144.7450 | Tempo = 3.59s
+Run 15: SP = 144.8900 | Tempo = 3.58s
+Run 16: SP = 146.1950 | Tempo = 3.26s
+Run 17: SP = 149.0500 | Tempo = 1.73s
+Run 18: SP = 149.1600 | Tempo = 1.59s
+Run 19: SP = 147.1050 | Tempo = 1.93s
+Run 20: SP = 146.6400 | Tempo = 3.61s
+Run 21: SP = 143.6350 | Tempo = 3.49s
+Run 22: SP = 148.3400 | Tempo = 3.78s
+Run 23: SP = 146.9300 | Tempo = 2.94s
+Run 24: SP = 147.4800 | Tempo = 3.83s
+Run 25: SP = 150.2750 | Tempo = 2.46s
+Run 26: SP = 143.4050 | Tempo = 2.29s
+Run 27: SP = 150.2650 | Tempo = 2.43s
+Run 28: SP = 148.3400 | Tempo = 3.79s
+Run 29: SP = 146.8650 | Tempo = 1.86s
+Run 30: SP = 143.8850 | Tempo = 3.60s
+Resumo para Pop=20 Mut=0.20 Elite=10 -> Min: 143.4050 | Média: 146.9143 | Max: 150.2750 | Tempo médio: 2.7945
+
+--- Pop=50 Mut=0.05 Elite=1 ---
+Run 1: SP = 148.3000 | Tempo = 9.28s
+Run 2: SP = 149.0000 | Tempo = 7.18s
+Run 3: SP = 150.4800 | Tempo = 8.76s
+Run 4: SP = 147.7950 | Tempo = 8.25s
+Run 5: SP = 150.2900 | Tempo = 9.21s
+Run 6: SP = 146.5800 | Tempo = 8.74s
+Run 7: SP = 148.1150 | Tempo = 7.52s
+Run 8: SP = 154.8600 | Tempo = 3.29s
+Run 9: SP = 147.4000 | Tempo = 8.94s
+Run 10: SP = 147.6100 | Tempo = 8.45s
+Run 11: SP = 144.2850 | Tempo = 8.22s
+Run 12: SP = 150.6200 | Tempo = 8.72s
+Run 13: SP = 147.6000 | Tempo = 8.81s
+Run 14: SP = 149.6750 | Tempo = 9.74s
+Run 15: SP = 149.6850 | Tempo = 7.66s
+Run 16: SP = 146.6200 | Tempo = 9.14s
+Run 17: SP = 151.2950 | Tempo = 9.35s
+Run 18: SP = 147.9800 | Tempo = 8.53s
+Run 19: SP = 147.8300 | Tempo = 9.83s
+Run 20: SP = 150.8300 | Tempo = 9.96s
+Run 21: SP = 150.3000 | Tempo = 7.24s
+Run 22: SP = 147.7200 | Tempo = 6.14s
+Run 23: SP = 145.6600 | Tempo = 9.12s
+Run 24: SP = 152.2850 | Tempo = 9.84s
+Run 25: SP = 146.2050 | Tempo = 7.66s
+Run 26: SP = 148.7950 | Tempo = 9.82s
+Run 27: SP = 150.2050 | Tempo = 5.10s
+Run 28: SP = 147.4200 | Tempo = 7.89s
+Run 29: SP = 151.8300 | Tempo = 9.72s
+Run 30: SP = 151.5250 | Tempo = 9.01s
+Resumo para Pop=50 Mut=0.05 Elite=1 -> Min: 144.2850 | Média: 148.9598 | Max: 154.8600 | Tempo médio: 8.3703
+
+--- Pop=50 Mut=0.05 Elite=5 ---
+Run 1: SP = 146.1750 | Tempo = 7.08s
+Run 2: SP = 147.6900 | Tempo = 6.62s
+Run 3: SP = 144.6950 | Tempo = 9.26s
+Run 4: SP = 147.1700 | Tempo = 4.51s
+Run 5: SP = 151.0200 | Tempo = 5.34s
+Run 6: SP = 150.9750 | Tempo = 9.79s
+Run 7: SP = 145.7150 | Tempo = 5.70s
+Run 8: SP = 146.6750 | Tempo = 4.60s
+Run 9: SP = 149.2050 | Tempo = 4.34s
+Run 10: SP = 146.1700 | Tempo = 2.92s
+Run 11: SP = 147.5450 | Tempo = 4.79s
+Run 12: SP = 147.4800 | Tempo = 7.58s
+Run 13: SP = 147.6250 | Tempo = 5.79s
+Run 14: SP = 148.8650 | Tempo = 9.05s
+Run 15: SP = 143.6350 | Tempo = 5.78s
+Run 16: SP = 145.5250 | Tempo = 4.50s
+Run 17: SP = 145.6500 | Tempo = 6.49s
+Run 18: SP = 153.8950 | Tempo = 4.42s
+Run 19: SP = 144.6600 | Tempo = 5.05s
+Run 20: SP = 147.3000 | Tempo = 5.99s
+Run 21: SP = 148.5800 | Tempo = 7.74s
+Run 22: SP = 146.1700 | Tempo = 6.10s
+Run 23: SP = 146.7500 | Tempo = 5.78s
+Run 24: SP = 144.7450 | Tempo = 6.19s
+Run 25: SP = 145.6250 | Tempo = 8.68s
+Run 26: SP = 145.7000 | Tempo = 7.03s
+Run 27: SP = 146.1850 | Tempo = 6.43s
+Run 28: SP = 143.4050 | Tempo = 4.76s
+Run 29: SP = 144.6950 | Tempo = 4.62s
+Run 30: SP = 144.8100 | Tempo = 7.50s
+Resumo para Pop=50 Mut=0.05 Elite=5 -> Min: 143.4050 | Média: 146.8112 | Max: 153.8950 | Tempo médio: 6.1472
+
+--- Pop=50 Mut=0.05 Elite=10 ---
+Run 1: SP = 149.0550 | Tempo = 4.45s
+Run 2: SP = 147.5550 | Tempo = 7.41s
+Run 3: SP = 146.7550 | Tempo = 8.41s
+Run 4: SP = 145.0050 | Tempo = 7.50s
+Run 5: SP = 145.5250 | Tempo = 8.77s
+Run 6: SP = 146.2250 | Tempo = 8.83s
+Run 7: SP = 148.5900 | Tempo = 5.35s
+Run 8: SP = 143.4050 | Tempo = 9.36s
+Run 9: SP = 147.7350 | Tempo = 6.57s
+Run 10: SP = 143.0850 | Tempo = 9.73s
+Run 11: SP = 147.4800 | Tempo = 4.93s
+Run 12: SP = 146.2250 | Tempo = 7.95s
+Run 13: SP = 147.1050 | Tempo = 4.68s
+Run 14: SP = 146.9100 | Tempo = 6.45s
+Run 15: SP = 147.6650 | Tempo = 8.04s
+Run 16: SP = 148.9850 | Tempo = 7.31s
+Run 17: SP = 148.8500 | Tempo = 7.88s
+Run 18: SP = 147.1050 | Tempo = 6.63s
+Run 19: SP = 146.7550 | Tempo = 4.59s
+Run 20: SP = 147.9300 | Tempo = 2.85s
+Run 21: SP = 147.9850 | Tempo = 7.37s
+Run 22: SP = 143.4050 | Tempo = 8.91s
+Run 23: SP = 143.3700 | Tempo = 5.48s
+Run 24: SP = 146.6150 | Tempo = 7.04s
+Run 25: SP = 147.1050 | Tempo = 6.23s
+Run 26: SP = 143.1600 | Tempo = 5.96s
+Run 27: SP = 147.1350 | Tempo = 9.35s
+Run 28: SP = 148.3400 | Tempo = 4.81s
+Run 29: SP = 147.6650 | Tempo = 5.90s
+Run 30: SP = 147.4800 | Tempo = 9.63s
+Resumo para Pop=50 Mut=0.05 Elite=10 -> Min: 143.0850 | Média: 146.6735 | Max: 149.0550 | Tempo médio: 6.9454
+
+--- Pop=50 Mut=0.10 Elite=1 ---
+Run 1: SP = 147.4700 | Tempo = 9.05s
+Run 2: SP = 146.4300 | Tempo = 8.50s
+Run 3: SP = 149.5550 | Tempo = 8.99s
+Run 4: SP = 149.2150 | Tempo = 6.53s
+Run 5: SP = 148.9650 | Tempo = 7.61s
+Run 6: SP = 149.3000 | Tempo = 9.21s
+Run 7: SP = 147.8500 | Tempo = 6.11s
+Run 8: SP = 146.6250 | Tempo = 8.56s
+Run 9: SP = 146.0700 | Tempo = 9.93s
+Run 10: SP = 148.6600 | Tempo = 9.73s
+Run 11: SP = 151.5450 | Tempo = 9.00s
+Run 12: SP = 147.9000 | Tempo = 9.51s
+Run 13: SP = 149.9750 | Tempo = 4.34s
+Run 14: SP = 147.5450 | Tempo = 6.51s
+Run 15: SP = 151.7900 | Tempo = 8.15s
+Run 16: SP = 146.7250 | Tempo = 6.58s
+Run 17: SP = 148.3000 | Tempo = 9.17s
+Run 18: SP = 146.2700 | Tempo = 8.79s
+Run 19: SP = 144.6950 | Tempo = 9.74s
+Run 20: SP = 148.0100 | Tempo = 7.97s
+Run 21: SP = 146.1050 | Tempo = 7.98s
+Run 22: SP = 148.8300 | Tempo = 9.47s
+Run 23: SP = 149.6800 | Tempo = 8.38s
+Run 24: SP = 150.3400 | Tempo = 9.35s
+Run 25: SP = 150.9700 | Tempo = 9.80s
+Run 26: SP = 149.6650 | Tempo = 6.45s
+Run 27: SP = 150.9300 | Tempo = 4.48s
+Run 28: SP = 146.7750 | Tempo = 9.87s
+Run 29: SP = 148.5200 | Tempo = 6.39s
+Run 30: SP = 146.8000 | Tempo = 7.05s
+Resumo para Pop=50 Mut=0.10 Elite=1 -> Min: 144.6950 | Média: 148.3837 | Max: 151.7900 | Tempo médio: 8.1062
+
+--- Pop=50 Mut=0.10 Elite=5 ---
+Run 1: SP = 148.3400 | Tempo = 4.49s
+Run 2: SP = 146.8650 | Tempo = 2.71s
+Run 3: SP = 150.2650 | Tempo = 4.19s
+Run 4: SP = 150.2000 | Tempo = 3.22s
+Run 5: SP = 143.0850 | Tempo = 4.58s
+Run 6: SP = 147.5450 | Tempo = 5.44s
+Run 7: SP = 147.1050 | Tempo = 3.21s
+Run 8: SP = 152.6600 | Tempo = 2.69s
+Run 9: SP = 149.0500 | Tempo = 4.46s
+Run 10: SP = 144.6950 | Tempo = 6.61s
+Run 11: SP = 150.2650 | Tempo = 6.61s
+Run 12: SP = 146.7550 | Tempo = 3.62s
+Run 13: SP = 147.1750 | Tempo = 3.96s
+Run 14: SP = 147.8850 | Tempo = 2.66s
+Run 15: SP = 143.0850 | Tempo = 9.57s
+Run 16: SP = 143.4050 | Tempo = 2.35s
+Run 17: SP = 148.3400 | Tempo = 2.89s
+Run 18: SP = 146.7550 | Tempo = 2.83s
+Run 19: SP = 144.5200 | Tempo = 5.12s
+Run 20: SP = 147.8950 | Tempo = 3.69s
+Run 21: SP = 145.7150 | Tempo = 1.89s
+Run 22: SP = 146.7900 | Tempo = 2.79s
+Run 23: SP = 148.8850 | Tempo = 3.68s
+Run 24: SP = 145.4900 | Tempo = 6.25s
+Run 25: SP = 147.6650 | Tempo = 3.43s
+Run 26: SP = 145.8750 | Tempo = 4.66s
+Run 27: SP = 144.4400 | Tempo = 9.42s
+Run 28: SP = 146.2250 | Tempo = 5.33s
+Run 29: SP = 145.7000 | Tempo = 2.76s
+Run 30: SP = 148.8500 | Tempo = 3.88s
+Resumo para Pop=50 Mut=0.10 Elite=5 -> Min: 143.0850 | Média: 147.0508 | Max: 152.6600 | Tempo médio: 4.2998
+
+--- Pop=50 Mut=0.10 Elite=10 ---
+Run 1: SP = 143.9000 | Tempo = 7.90s
+Run 2: SP = 147.1050 | Tempo = 5.50s
+Run 3: SP = 147.4800 | Tempo = 4.02s
+Run 4: SP = 144.2100 | Tempo = 6.26s
+Run 5: SP = 146.0600 | Tempo = 6.79s
+Run 6: SP = 143.6350 | Tempo = 4.58s
+Run 7: SP = 144.6600 | Tempo = 3.25s
+Run 8: SP = 146.7550 | Tempo = 7.09s
+Run 9: SP = 149.9350 | Tempo = 1.57s
+Run 10: SP = 143.4050 | Tempo = 5.42s
+Run 11: SP = 145.4450 | Tempo = 4.02s
+Run 12: SP = 146.0900 | Tempo = 4.84s
+Run 13: SP = 146.2250 | Tempo = 4.86s
+Run 14: SP = 148.5350 | Tempo = 4.81s
+Run 15: SP = 145.2550 | Tempo = 4.97s
+Run 16: SP = 148.4950 | Tempo = 3.65s
+Run 17: SP = 145.8750 | Tempo = 3.64s
+Run 18: SP = 144.4900 | Tempo = 3.56s
+Run 19: SP = 143.0850 | Tempo = 6.55s
+Run 20: SP = 147.4800 | Tempo = 3.14s
+Run 21: SP = 145.9200 | Tempo = 4.10s
+Run 22: SP = 143.2350 | Tempo = 8.94s
+Run 23: SP = 145.6700 | Tempo = 2.56s
+Run 24: SP = 144.7450 | Tempo = 7.59s
+Run 25: SP = 144.6950 | Tempo = 3.24s
+Run 26: SP = 147.4000 | Tempo = 4.71s
+Run 27: SP = 144.7450 | Tempo = 4.65s
+Run 28: SP = 151.1700 | Tempo = 6.50s
+Run 29: SP = 147.4000 | Tempo = 2.64s
+Run 30: SP = 147.5350 | Tempo = 4.63s
+Resumo para Pop=50 Mut=0.10 Elite=10 -> Min: 143.0850 | Média: 146.0212 | Max: 151.1700 | Tempo médio: 4.8648
+
+--- Pop=50 Mut=0.20 Elite=1 ---
+Run 1: SP = 146.3300 | Tempo = 8.73s
+Run 2: SP = 147.0650 | Tempo = 7.39s
+Run 3: SP = 147.4500 | Tempo = 8.19s
+Run 4: SP = 145.4950 | Tempo = 9.61s
+Run 5: SP = 146.8650 | Tempo = 9.46s
+Run 6: SP = 148.7850 | Tempo = 3.33s
+Run 7: SP = 149.1050 | Tempo = 3.89s
+Run 8: SP = 146.8450 | Tempo = 5.54s
+Run 9: SP = 149.5500 | Tempo = 8.15s
+Run 10: SP = 147.8900 | Tempo = 9.80s
+Run 11: SP = 150.0950 | Tempo = 9.99s
+Run 12: SP = 146.9600 | Tempo = 2.82s
+Run 13: SP = 145.4700 | Tempo = 8.83s
+Run 14: SP = 149.1750 | Tempo = 8.55s
+Run 15: SP = 153.1850 | Tempo = 9.78s
+Run 16: SP = 144.3600 | Tempo = 5.56s
+Run 17: SP = 145.9000 | Tempo = 9.21s
+Run 18: SP = 150.7500 | Tempo = 7.80s
+Run 19: SP = 153.2550 | Tempo = 3.93s
+Run 20: SP = 147.9150 | Tempo = 8.04s
+Run 21: SP = 150.9450 | Tempo = 7.60s
+Run 22: SP = 145.1350 | Tempo = 3.69s
+Run 23: SP = 146.4900 | Tempo = 7.34s
+Run 24: SP = 148.4500 | Tempo = 9.14s
+Run 25: SP = 148.4700 | Tempo = 9.26s
+Run 26: SP = 149.2950 | Tempo = 8.28s
+Run 27: SP = 148.5250 | Tempo = 8.77s
+Run 28: SP = 149.3700 | Tempo = 9.06s
+Run 29: SP = 147.9050 | Tempo = 9.45s
+Run 30: SP = 146.8900 | Tempo = 8.30s
+Resumo para Pop=50 Mut=0.20 Elite=1 -> Min: 144.3600 | Média: 148.1307 | Max: 153.2550 | Tempo médio: 7.6498
+
+--- Pop=50 Mut=0.20 Elite=5 ---
+Run 1: SP = 148.3400 | Tempo = 4.13s
+Run 2: SP = 148.5350 | Tempo = 2.53s
+Run 3: SP = 144.4900 | Tempo = 6.20s
+Run 4: SP = 143.4050 | Tempo = 2.73s
+Run 5: SP = 147.6650 | Tempo = 3.51s
+Run 6: SP = 143.4050 | Tempo = 2.50s
+Run 7: SP = 144.4900 | Tempo = 2.84s
+Run 8: SP = 145.8750 | Tempo = 2.63s
+Run 9: SP = 150.7650 | Tempo = 1.88s
+Run 10: SP = 144.8900 | Tempo = 2.22s
+Run 11: SP = 145.8750 | Tempo = 4.60s
+Run 12: SP = 146.1950 | Tempo = 3.22s
+Run 13: SP = 146.9100 | Tempo = 7.99s
+Run 14: SP = 144.8100 | Tempo = 3.87s
+Run 15: SP = 148.3400 | Tempo = 2.37s
+Run 16: SP = 148.5550 | Tempo = 4.03s
+Run 17: SP = 152.6400 | Tempo = 2.33s
+Run 18: SP = 147.6650 | Tempo = 4.04s
+Run 19: SP = 144.4400 | Tempo = 2.79s
+Run 20: SP = 147.5450 | Tempo = 2.62s
+Run 21: SP = 147.4800 | Tempo = 3.41s
+Run 22: SP = 146.9300 | Tempo = 2.41s
+Run 23: SP = 147.4800 | Tempo = 3.78s
+Run 24: SP = 147.4800 | Tempo = 4.37s
+Run 25: SP = 144.4400 | Tempo = 5.04s
+Run 26: SP = 145.4900 | Tempo = 6.01s
+Run 27: SP = 145.7000 | Tempo = 5.69s
+Run 28: SP = 146.0600 | Tempo = 1.86s
+Run 29: SP = 143.1600 | Tempo = 5.29s
+Run 30: SP = 147.6250 | Tempo = 3.70s
+Resumo para Pop=50 Mut=0.20 Elite=5 -> Min: 143.1600 | Média: 146.5560 | Max: 152.6400 | Tempo médio: 3.6871
+
+--- Pop=50 Mut=0.20 Elite=10 ---
+Run 1: SP = 147.4800 | Tempo = 3.23s
+Run 2: SP = 146.8650 | Tempo = 2.95s
+Run 3: SP = 150.5000 | Tempo = 2.50s
+Run 4: SP = 146.8650 | Tempo = 3.47s
+Run 5: SP = 147.1750 | Tempo = 2.54s
+Run 6: SP = 146.8650 | Tempo = 6.04s
+Run 7: SP = 143.0850 | Tempo = 4.34s
+Run 8: SP = 143.1600 | Tempo = 4.09s
+Run 9: SP = 144.4900 | Tempo = 6.48s
+Run 10: SP = 150.9850 | Tempo = 3.44s
+Run 11: SP = 147.1750 | Tempo = 2.99s
+Run 12: SP = 147.4100 | Tempo = 2.35s
+Run 13: SP = 146.1200 | Tempo = 2.92s
+Run 14: SP = 149.3300 | Tempo = 3.73s
+Run 15: SP = 145.5250 | Tempo = 2.97s
+Run 16: SP = 146.1850 | Tempo = 3.93s
+Run 17: SP = 147.7050 | Tempo = 2.38s
+Run 18: SP = 143.4050 | Tempo = 2.36s
+Run 19: SP = 149.5650 | Tempo = 1.50s
+Run 20: SP = 143.0850 | Tempo = 1.65s
+Run 21: SP = 143.0850 | Tempo = 3.11s
+Run 22: SP = 147.4850 | Tempo = 4.78s
+Run 23: SP = 149.0250 | Tempo = 1.95s
+Run 24: SP = 151.3900 | Tempo = 5.14s
+Run 25: SP = 146.1900 | Tempo = 4.58s
+Run 26: SP = 146.1200 | Tempo = 3.08s
+Run 27: SP = 143.4050 | Tempo = 1.98s
+Run 28: SP = 148.8300 | Tempo = 3.63s
+Run 29: SP = 149.4450 | Tempo = 2.59s
+Run 30: SP = 146.7550 | Tempo = 3.44s
+Resumo para Pop=50 Mut=0.20 Elite=10 -> Min: 143.0850 | Média: 146.8235 | Max: 151.3900 | Tempo médio: 3.3381
+
+--- Pop=100 Mut=0.05 Elite=1 ---
+Run 1: SP = 145.2400 | Tempo = 8.12s
+Run 2: SP = 151.3550 | Tempo = 4.52s
+Run 3: SP = 149.0450 | Tempo = 7.29s
+Run 4: SP = 148.0150 | Tempo = 3.28s
+Run 5: SP = 148.3550 | Tempo = 9.65s
+Run 6: SP = 152.2450 | Tempo = 9.80s
+Run 7: SP = 148.7600 | Tempo = 7.31s
+Run 8: SP = 151.2250 | Tempo = 8.10s
+Run 9: SP = 149.4000 | Tempo = 6.64s
+Run 10: SP = 148.5300 | Tempo = 9.16s
+Run 11: SP = 147.9200 | Tempo = 7.24s
+Run 12: SP = 146.8850 | Tempo = 9.68s
+Run 13: SP = 153.1350 | Tempo = 9.65s
+Run 14: SP = 146.3350 | Tempo = 9.80s
+Run 15: SP = 149.9900 | Tempo = 7.30s
+Run 16: SP = 149.9050 | Tempo = 9.02s
+Run 17: SP = 146.3600 | Tempo = 9.13s
+Run 18: SP = 147.2050 | Tempo = 8.37s
+Run 19: SP = 149.4650 | Tempo = 8.02s
+Run 20: SP = 148.3250 | Tempo = 9.78s
+Run 21: SP = 150.8200 | Tempo = 9.95s
+Run 22: SP = 149.0800 | Tempo = 9.42s
+Run 23: SP = 149.3650 | Tempo = 7.60s
+Run 24: SP = 151.9950 | Tempo = 8.87s
+Run 25: SP = 151.4150 | Tempo = 8.87s
+Run 26: SP = 149.4950 | Tempo = 9.38s
+Run 27: SP = 155.8050 | Tempo = 9.37s
+Run 28: SP = 147.9200 | Tempo = 9.72s
+Run 29: SP = 146.9300 | Tempo = 5.51s
+Run 30: SP = 150.4900 | Tempo = 6.62s
+Resumo para Pop=100 Mut=0.05 Elite=1 -> Min: 145.2400 | Média: 149.3670 | Max: 155.8050 | Tempo médio: 8.2394
+
+--- Pop=100 Mut=0.05 Elite=5 ---
+Run 1: SP = 146.6750 | Tempo = 6.97s
+Run 2: SP = 143.5000 | Tempo = 9.23s
+Run 3: SP = 144.6600 | Tempo = 9.73s
+Run 4: SP = 146.9100 | Tempo = 7.61s
+Run 5: SP = 151.0400 | Tempo = 9.88s
+Run 6: SP = 149.7650 | Tempo = 5.98s
+Run 7: SP = 148.6700 | Tempo = 6.78s
+Run 8: SP = 147.8150 | Tempo = 7.53s
+Run 9: SP = 147.7350 | Tempo = 9.23s
+Run 10: SP = 147.1250 | Tempo = 8.93s
+Run 11: SP = 143.8350 | Tempo = 8.41s
+Run 12: SP = 148.2750 | Tempo = 7.49s
+Run 13: SP = 143.6250 | Tempo = 9.91s
+Run 14: SP = 145.2700 | Tempo = 8.36s
+Run 15: SP = 148.1600 | Tempo = 8.15s
+Run 16: SP = 146.7250 | Tempo = 8.94s
+Run 17: SP = 146.6400 | Tempo = 7.20s
+Run 18: SP = 145.0650 | Tempo = 8.67s
+Run 19: SP = 147.9050 | Tempo = 8.75s
+Run 20: SP = 146.9950 | Tempo = 8.08s
+Run 21: SP = 151.0400 | Tempo = 6.07s
+Run 22: SP = 147.8100 | Tempo = 7.85s
+Run 23: SP = 149.5550 | Tempo = 6.56s
+Run 24: SP = 147.5500 | Tempo = 9.37s
+Run 25: SP = 145.2800 | Tempo = 9.86s
+Run 26: SP = 143.4050 | Tempo = 7.00s
+Run 27: SP = 151.0200 | Tempo = 9.45s
+Run 28: SP = 147.4850 | Tempo = 8.33s
+Run 29: SP = 147.4350 | Tempo = 9.82s
+Run 30: SP = 145.8850 | Tempo = 8.49s
+Resumo para Pop=100 Mut=0.05 Elite=5 -> Min: 143.4050 | Média: 147.0952 | Max: 151.0400 | Tempo médio: 8.2883
+
+--- Pop=100 Mut=0.05 Elite=10 ---
+Run 1: SP = 151.0850 | Tempo = 6.72s
+Run 2: SP = 148.2000 | Tempo = 9.38s
+Run 3: SP = 147.5450 | Tempo = 9.28s
+Run 4: SP = 146.1850 | Tempo = 5.93s
+Run 5: SP = 148.4950 | Tempo = 5.35s
+Run 6: SP = 143.6350 | Tempo = 6.64s
+Run 7: SP = 143.0850 | Tempo = 3.72s
+Run 8: SP = 143.4050 | Tempo = 8.49s
+Run 9: SP = 143.8850 | Tempo = 6.20s
+Run 10: SP = 147.1750 | Tempo = 6.80s
+Run 11: SP = 145.5550 | Tempo = 8.11s
+Run 12: SP = 147.7050 | Tempo = 4.12s
+Run 13: SP = 147.4800 | Tempo = 8.11s
+Run 14: SP = 143.2800 | Tempo = 7.03s
+Run 15: SP = 147.7350 | Tempo = 8.24s
+Run 16: SP = 144.1500 | Tempo = 7.47s
+Run 17: SP = 147.1050 | Tempo = 4.96s
+Run 18: SP = 148.3400 | Tempo = 6.25s
+Run 19: SP = 143.4050 | Tempo = 2.45s
+Run 20: SP = 147.4800 | Tempo = 7.24s
+Run 21: SP = 147.5500 | Tempo = 7.92s
+Run 22: SP = 147.4900 | Tempo = 4.01s
+Run 23: SP = 148.5550 | Tempo = 7.62s
+Run 24: SP = 144.4400 | Tempo = 7.87s
+Run 25: SP = 147.4850 | Tempo = 8.58s
+Run 26: SP = 144.3050 | Tempo = 9.84s
+Run 27: SP = 146.2050 | Tempo = 6.00s
+Run 28: SP = 145.8750 | Tempo = 7.56s
+Run 29: SP = 149.8800 | Tempo = 9.86s
+Run 30: SP = 143.5000 | Tempo = 9.07s
+Resumo para Pop=100 Mut=0.05 Elite=10 -> Min: 143.0850 | Média: 146.3405 | Max: 151.0850 | Tempo médio: 7.0280
+
+--- Pop=100 Mut=0.10 Elite=1 ---
+Run 1: SP = 147.7100 | Tempo = 6.45s
+Run 2: SP = 153.6900 | Tempo = 3.31s
+Run 3: SP = 155.9300 | Tempo = 9.53s
+Run 4: SP = 152.2450 | Tempo = 8.11s
+Run 5: SP = 151.6200 | Tempo = 9.72s
+Run 6: SP = 146.9550 | Tempo = 3.19s
+Run 7: SP = 150.7000 | Tempo = 7.21s
+Run 8: SP = 151.2300 | Tempo = 8.73s
+Run 9: SP = 145.5550 | Tempo = 9.95s
+Run 10: SP = 149.4700 | Tempo = 9.61s
+Run 11: SP = 150.5100 | Tempo = 5.67s
+Run 12: SP = 145.5700 | Tempo = 9.53s
+Run 13: SP = 148.3050 | Tempo = 8.02s
+Run 14: SP = 146.6850 | Tempo = 9.87s
+Run 15: SP = 148.8300 | Tempo = 9.41s
+Run 16: SP = 145.8700 | Tempo = 9.80s
+Run 17: SP = 149.4650 | Tempo = 9.43s
+Run 18: SP = 149.2100 | Tempo = 9.28s
+Run 19: SP = 145.9200 | Tempo = 9.27s
+Run 20: SP = 151.1550 | Tempo = 3.51s
+Run 21: SP = 148.4950 | Tempo = 9.15s
+Run 22: SP = 147.4300 | Tempo = 8.59s
+Run 23: SP = 149.6500 | Tempo = 8.51s
+Run 24: SP = 149.3300 | Tempo = 7.22s
+Run 25: SP = 147.9200 | Tempo = 5.90s
+Run 26: SP = 153.0550 | Tempo = 5.94s
+Run 27: SP = 145.6300 | Tempo = 9.11s
+Run 28: SP = 149.9450 | Tempo = 9.90s
+Run 29: SP = 149.0100 | Tempo = 9.35s
+Run 30: SP = 147.5850 | Tempo = 7.13s
+Resumo para Pop=100 Mut=0.10 Elite=1 -> Min: 145.5550 | Média: 149.1558 | Max: 155.9300 | Tempo médio: 8.0115
+
+--- Pop=100 Mut=0.10 Elite=5 ---
+Run 1: SP = 144.3050 | Tempo = 7.23s
+Run 2: SP = 143.5450 | Tempo = 9.67s
+Run 3: SP = 143.9500 | Tempo = 5.18s
+Run 4: SP = 150.8750 | Tempo = 8.64s
+Run 5: SP = 153.8100 | Tempo = 9.57s
+Run 6: SP = 148.7450 | Tempo = 8.55s
+Run 7: SP = 144.0650 | Tempo = 9.72s
+Run 8: SP = 148.0050 | Tempo = 8.06s
+Run 9: SP = 143.5650 | Tempo = 6.21s
+Run 10: SP = 148.5050 | Tempo = 6.68s
+Run 11: SP = 151.1200 | Tempo = 5.47s
+Run 12: SP = 148.3900 | Tempo = 8.21s
+Run 13: SP = 147.3450 | Tempo = 8.65s
+Run 14: SP = 143.4450 | Tempo = 7.06s
+Run 15: SP = 143.9700 | Tempo = 8.24s
+Run 16: SP = 150.8850 | Tempo = 9.15s
+Run 17: SP = 145.9050 | Tempo = 4.33s
+Run 18: SP = 146.5950 | Tempo = 8.10s
+Run 19: SP = 151.4200 | Tempo = 8.61s
+Run 20: SP = 145.0800 | Tempo = 7.83s
+Run 21: SP = 148.6550 | Tempo = 7.47s
+Run 22: SP = 146.9350 | Tempo = 9.13s
+Run 23: SP = 145.9800 | Tempo = 9.26s
+Run 24: SP = 147.4550 | Tempo = 8.83s
+Run 25: SP = 148.0650 | Tempo = 9.77s
+Run 26: SP = 148.4700 | Tempo = 5.43s
+Run 27: SP = 147.0250 | Tempo = 6.54s
+Run 28: SP = 149.6050 | Tempo = 7.92s
+Run 29: SP = 143.6900 | Tempo = 6.31s
+Run 30: SP = 145.8750 | Tempo = 5.77s
+Resumo para Pop=100 Mut=0.10 Elite=5 -> Min: 143.4450 | Média: 147.1760 | Max: 153.8100 | Tempo médio: 7.7199
+
+--- Pop=100 Mut=0.10 Elite=10 ---
+Run 1: SP = 147.4450 | Tempo = 6.96s
+Run 2: SP = 147.4800 | Tempo = 6.64s
+Run 3: SP = 147.8950 | Tempo = 2.80s
+Run 4: SP = 144.6950 | Tempo = 5.72s
+Run 5: SP = 146.1300 | Tempo = 5.80s
+Run 6: SP = 143.0850 | Tempo = 3.94s
+Run 7: SP = 147.1050 | Tempo = 7.73s
+Run 8: SP = 143.9850 | Tempo = 8.94s
+Run 9: SP = 143.4050 | Tempo = 6.27s
+Run 10: SP = 150.2750 | Tempo = 4.86s
+Run 11: SP = 143.1600 | Tempo = 7.34s
+Run 12: SP = 147.4800 | Tempo = 5.85s
+Run 13: SP = 145.7200 | Tempo = 3.08s
+Run 14: SP = 147.5450 | Tempo = 2.86s
+Run 15: SP = 149.4450 | Tempo = 6.63s
+Run 16: SP = 148.9850 | Tempo = 6.17s
+Run 17: SP = 144.4400 | Tempo = 5.88s
+Run 18: SP = 146.7550 | Tempo = 4.30s
+Run 19: SP = 143.0850 | Tempo = 6.17s
+Run 20: SP = 146.1300 | Tempo = 5.09s
+Run 21: SP = 148.9800 | Tempo = 3.60s
+Run 22: SP = 147.6350 | Tempo = 6.52s
+Run 23: SP = 145.7000 | Tempo = 3.75s
+Run 24: SP = 148.8500 | Tempo = 5.06s
+Run 25: SP = 143.4050 | Tempo = 7.30s
+Run 26: SP = 145.4450 | Tempo = 8.00s
+Run 27: SP = 146.1300 | Tempo = 5.26s
+Run 28: SP = 143.4050 | Tempo = 4.26s
+Run 29: SP = 148.4950 | Tempo = 7.29s
+Run 30: SP = 147.9300 | Tempo = 6.52s
+Resumo para Pop=100 Mut=0.10 Elite=10 -> Min: 143.0850 | Média: 146.3407 | Max: 150.2750 | Tempo médio: 5.6869
+
+--- Pop=100 Mut=0.20 Elite=1 ---
+Run 1: SP = 147.3750 | Tempo = 8.06s
+Run 2: SP = 150.5150 | Tempo = 5.06s
+Run 3: SP = 148.0600 | Tempo = 7.26s
+Run 4: SP = 144.4200 | Tempo = 4.52s
+Run 5: SP = 151.1250 | Tempo = 9.78s
+Run 6: SP = 149.1000 | Tempo = 6.60s
+Run 7: SP = 148.0450 | Tempo = 6.81s
+Run 8: SP = 148.4850 | Tempo = 6.49s
+Run 9: SP = 148.4900 | Tempo = 7.59s
+Run 10: SP = 146.9600 | Tempo = 9.90s
+Run 11: SP = 147.4150 | Tempo = 3.12s
+Run 12: SP = 147.2950 | Tempo = 8.44s
+Run 13: SP = 150.1150 | Tempo = 9.47s
+Run 14: SP = 149.3150 | Tempo = 7.49s
+Run 15: SP = 149.7700 | Tempo = 9.07s
+Run 16: SP = 150.1150 | Tempo = 9.80s
+Run 17: SP = 151.0500 | Tempo = 9.44s
+Run 18: SP = 152.4600 | Tempo = 8.48s
+Run 19: SP = 150.6650 | Tempo = 9.15s
+Run 20: SP = 148.4350 | Tempo = 9.59s
+Run 21: SP = 147.9400 | Tempo = 8.32s
+Run 22: SP = 150.3950 | Tempo = 9.97s
+Run 23: SP = 146.9050 | Tempo = 9.71s
+Run 24: SP = 150.3050 | Tempo = 9.62s
+Run 25: SP = 150.4050 | Tempo = 9.69s
+Run 26: SP = 147.8750 | Tempo = 7.79s
+Run 27: SP = 150.0200 | Tempo = 4.86s
+Run 28: SP = 149.9950 | Tempo = 9.99s
+Run 29: SP = 148.6200 | Tempo = 8.17s
+Run 30: SP = 146.3150 | Tempo = 8.28s
+Resumo para Pop=100 Mut=0.20 Elite=1 -> Min: 144.4200 | Média: 148.9328 | Max: 152.4600 | Tempo médio: 8.0851
+
+--- Pop=100 Mut=0.20 Elite=5 ---
+Run 1: SP = 148.7250 | Tempo = 8.65s
+Run 2: SP = 146.1200 | Tempo = 6.15s
+Run 3: SP = 147.3750 | Tempo = 7.88s
+Run 4: SP = 147.0600 | Tempo = 9.24s
+Run 5: SP = 148.9450 | Tempo = 6.73s
+Run 6: SP = 149.0900 | Tempo = 4.59s
+Run 7: SP = 145.2850 | Tempo = 9.70s
+Run 8: SP = 149.8950 | Tempo = 9.94s
+Run 9: SP = 143.8300 | Tempo = 7.73s
+Run 10: SP = 143.4900 | Tempo = 8.11s
+Run 11: SP = 147.5500 | Tempo = 9.05s
+Run 12: SP = 151.2150 | Tempo = 8.64s
+Run 13: SP = 149.2800 | Tempo = 7.45s
+Run 14: SP = 149.3300 | Tempo = 7.69s
+Run 15: SP = 144.8650 | Tempo = 7.91s
+Run 16: SP = 143.8850 | Tempo = 8.78s
+Run 17: SP = 146.1700 | Tempo = 2.60s
+Run 18: SP = 148.0250 | Tempo = 9.36s
+Run 19: SP = 146.3750 | Tempo = 5.28s
+Run 20: SP = 145.2200 | Tempo = 9.69s
+Run 21: SP = 147.9500 | Tempo = 7.33s
+Run 22: SP = 147.5550 | Tempo = 8.00s
+Run 23: SP = 149.4800 | Tempo = 8.63s
+Run 24: SP = 149.4450 | Tempo = 5.98s
+Run 25: SP = 148.9250 | Tempo = 9.22s
+Run 26: SP = 146.3000 | Tempo = 6.83s
+Run 27: SP = 144.4950 | Tempo = 7.70s
+Run 28: SP = 147.0100 | Tempo = 9.35s
+Run 29: SP = 144.7700 | Tempo = 9.28s
+Run 30: SP = 146.8650 | Tempo = 5.67s
+Resumo para Pop=100 Mut=0.20 Elite=5 -> Min: 143.4900 | Média: 147.1508 | Max: 151.2150 | Tempo médio: 7.7715
+
+--- Pop=100 Mut=0.20 Elite=10 ---
+Run 1: SP = 143.0850 | Tempo = 6.81s
+Run 2: SP = 143.0850 | Tempo = 5.45s
+Run 3: SP = 146.7400 | Tempo = 3.22s
+Run 4: SP = 146.1850 | Tempo = 7.62s
+Run 5: SP = 147.6650 | Tempo = 6.13s
+Run 6: SP = 143.0850 | Tempo = 4.49s
+Run 7: SP = 146.4350 | Tempo = 5.89s
+Run 8: SP = 147.4850 | Tempo = 4.76s
+Run 9: SP = 147.6650 | Tempo = 3.46s
+Run 10: SP = 146.1300 | Tempo = 2.65s
+Run 11: SP = 143.0850 | Tempo = 4.84s
+Run 12: SP = 144.4400 | Tempo = 5.89s
+Run 13: SP = 144.6950 | Tempo = 3.73s
+Run 14: SP = 146.2250 | Tempo = 5.06s
+Run 15: SP = 143.4050 | Tempo = 4.19s
+Run 16: SP = 144.6950 | Tempo = 6.63s
+Run 17: SP = 144.6600 | Tempo = 4.44s
+Run 18: SP = 145.5550 | Tempo = 4.37s
+Run 19: SP = 144.5200 | Tempo = 3.64s
+Run 20: SP = 147.6650 | Tempo = 2.88s
+Run 21: SP = 149.8800 | Tempo = 7.37s
+Run 22: SP = 143.4050 | Tempo = 4.46s
+Run 23: SP = 144.6950 | Tempo = 1.78s
+Run 24: SP = 143.0850 | Tempo = 6.98s
+Run 25: SP = 145.8750 | Tempo = 5.26s
+Run 26: SP = 144.5200 | Tempo = 4.42s
+Run 27: SP = 147.4900 | Tempo = 5.53s
+Run 28: SP = 146.8650 | Tempo = 4.50s
+Run 29: SP = 143.2800 | Tempo = 6.00s
+Run 30: SP = 144.4400 | Tempo = 8.80s
+Resumo para Pop=100 Mut=0.20 Elite=10 -> Min: 143.0850 | Média: 145.3347 | Max: 149.8800 | Tempo médio: 5.0413
+
+--- Pop=150 Mut=0.05 Elite=1 ---
+Run 1: SP = 149.6150 | Tempo = 9.26s
+Run 2: SP = 147.3500 | Tempo = 7.18s
+Run 3: SP = 153.3350 | Tempo = 9.43s
+Run 4: SP = 150.1100 | Tempo = 6.73s
+Run 5: SP = 148.2950 | Tempo = 7.68s
+Run 6: SP = 149.3450 | Tempo = 5.69s
+Run 7: SP = 146.5400 | Tempo = 8.11s
+Run 8: SP = 152.0850 | Tempo = 6.21s
+Run 9: SP = 146.9550 | Tempo = 6.71s
+Run 10: SP = 146.9800 | Tempo = 6.23s
+Run 11: SP = 147.1950 | Tempo = 8.67s
+Run 12: SP = 149.6050 | Tempo = 8.33s
+Run 13: SP = 148.8050 | Tempo = 9.33s
+Run 14: SP = 152.1350 | Tempo = 9.93s
+Run 15: SP = 150.6100 | Tempo = 6.60s
+Run 16: SP = 152.1450 | Tempo = 7.19s
+Run 17: SP = 145.9050 | Tempo = 5.47s
+Run 18: SP = 151.4150 | Tempo = 9.47s
+Run 19: SP = 150.0150 | Tempo = 9.13s
+Run 20: SP = 154.3700 | Tempo = 6.99s
+Run 21: SP = 150.9150 | Tempo = 9.29s
+Run 22: SP = 149.6000 | Tempo = 7.86s
+Run 23: SP = 149.2600 | Tempo = 6.89s
+Run 24: SP = 146.8350 | Tempo = 9.07s
+Run 25: SP = 150.6100 | Tempo = 8.87s
+Run 26: SP = 148.4300 | Tempo = 8.83s
+Run 27: SP = 154.6300 | Tempo = 4.19s
+Run 28: SP = 152.1600 | Tempo = 9.12s
+Run 29: SP = 150.5550 | Tempo = 7.98s
+Run 30: SP = 150.1900 | Tempo = 8.08s
+Resumo para Pop=150 Mut=0.05 Elite=1 -> Min: 145.9050 | Média: 149.8665 | Max: 154.6300 | Tempo médio: 7.8170
+
+--- Pop=150 Mut=0.05 Elite=5 ---
+Run 1: SP = 145.8300 | Tempo = 3.91s
+Run 2: SP = 148.3400 | Tempo = 9.31s
+Run 3: SP = 145.8850 | Tempo = 7.95s
+Run 4: SP = 145.2950 | Tempo = 5.96s
+Run 5: SP = 144.0800 | Tempo = 8.70s
+Run 6: SP = 149.2650 | Tempo = 6.80s
+Run 7: SP = 144.9450 | Tempo = 8.37s
+Run 8: SP = 146.6550 | Tempo = 9.51s
+Run 9: SP = 148.8350 | Tempo = 9.29s
+Run 10: SP = 150.7200 | Tempo = 7.36s
+Run 11: SP = 147.7400 | Tempo = 6.27s
+Run 12: SP = 146.9400 | Tempo = 5.36s
+Run 13: SP = 149.6050 | Tempo = 9.71s
+Run 14: SP = 147.3850 | Tempo = 6.94s
+Run 15: SP = 148.9800 | Tempo = 5.44s
+Run 16: SP = 146.1400 | Tempo = 5.16s
+Run 17: SP = 147.6150 | Tempo = 8.91s
+Run 18: SP = 148.2850 | Tempo = 8.34s
+Run 19: SP = 143.9350 | Tempo = 9.37s
+Run 20: SP = 147.2600 | Tempo = 7.48s
+Run 21: SP = 149.7100 | Tempo = 9.98s
+Run 22: SP = 149.1500 | Tempo = 9.21s
+Run 23: SP = 151.7850 | Tempo = 8.77s
+Run 24: SP = 147.8700 | Tempo = 8.60s
+Run 25: SP = 151.9000 | Tempo = 9.50s
+Run 26: SP = 145.9150 | Tempo = 7.66s
+Run 27: SP = 147.4800 | Tempo = 5.09s
+Run 28: SP = 148.8050 | Tempo = 5.22s
+Run 29: SP = 146.4000 | Tempo = 6.82s
+Run 30: SP = 147.3950 | Tempo = 7.97s
+Resumo para Pop=150 Mut=0.05 Elite=5 -> Min: 143.9350 | Média: 147.6715 | Max: 151.9000 | Tempo médio: 7.6317
+
+--- Pop=150 Mut=0.05 Elite=10 ---
+Run 1: SP = 146.1300 | Tempo = 8.14s
+Run 2: SP = 144.6600 | Tempo = 9.61s
+Run 3: SP = 146.9900 | Tempo = 6.30s
+Run 4: SP = 144.8650 | Tempo = 8.92s
+Run 5: SP = 145.7000 | Tempo = 8.50s
+Run 6: SP = 148.7300 | Tempo = 9.88s
+Run 7: SP = 144.8300 | Tempo = 8.91s
+Run 8: SP = 146.8000 | Tempo = 9.44s
+Run 9: SP = 143.1600 | Tempo = 8.98s
+Run 10: SP = 143.7100 | Tempo = 9.74s
+Run 11: SP = 149.6000 | Tempo = 9.06s
+Run 12: SP = 148.3400 | Tempo = 6.10s
+Run 13: SP = 148.3300 | Tempo = 9.77s
+Run 14: SP = 143.4050 | Tempo = 9.78s
+Run 15: SP = 143.4050 | Tempo = 8.79s
+Run 16: SP = 143.6250 | Tempo = 6.85s
+Run 17: SP = 145.3050 | Tempo = 6.45s
+Run 18: SP = 149.4450 | Tempo = 9.37s
+Run 19: SP = 149.2750 | Tempo = 9.57s
+Run 20: SP = 143.4050 | Tempo = 6.28s
+Run 21: SP = 147.0000 | Tempo = 8.75s
+Run 22: SP = 147.1600 | Tempo = 8.46s
+Run 23: SP = 143.4050 | Tempo = 8.55s
+Run 24: SP = 148.8900 | Tempo = 9.44s
+Run 25: SP = 145.3150 | Tempo = 8.22s
+Run 26: SP = 147.6350 | Tempo = 5.98s
+Run 27: SP = 143.9850 | Tempo = 9.37s
+Run 28: SP = 150.8650 | Tempo = 8.76s
+Run 29: SP = 149.7550 | Tempo = 7.92s
+Run 30: SP = 147.9300 | Tempo = 9.50s
+Resumo para Pop=150 Mut=0.05 Elite=10 -> Min: 143.1600 | Média: 146.3883 | Max: 150.8650 | Tempo médio: 8.5133
+
+--- Pop=150 Mut=0.10 Elite=1 ---
+Run 1: SP = 150.1400 | Tempo = 9.25s
+Run 2: SP = 151.6550 | Tempo = 9.15s
+Run 3: SP = 148.4850 | Tempo = 8.57s
+Run 4: SP = 153.6600 | Tempo = 3.82s
+Run 5: SP = 148.5550 | Tempo = 6.54s
+Run 6: SP = 148.9850 | Tempo = 3.71s
+Run 7: SP = 148.1100 | Tempo = 9.40s
+Run 8: SP = 152.4000 | Tempo = 4.68s
+Run 9: SP = 150.8950 | Tempo = 7.83s
+Run 10: SP = 145.4800 | Tempo = 8.69s
+Run 11: SP = 150.1550 | Tempo = 2.11s
+Run 12: SP = 148.7150 | Tempo = 8.38s
+Run 13: SP = 144.8000 | Tempo = 7.56s
+Run 14: SP = 150.7250 | Tempo = 9.19s
+Run 15: SP = 147.7800 | Tempo = 8.60s
+Run 16: SP = 147.2100 | Tempo = 8.54s
+Run 17: SP = 149.1500 | Tempo = 9.30s
+Run 18: SP = 150.7150 | Tempo = 7.06s
+Run 19: SP = 152.3400 | Tempo = 4.36s
+Run 20: SP = 152.5400 | Tempo = 8.40s
+Run 21: SP = 150.3400 | Tempo = 4.22s
+Run 22: SP = 146.1300 | Tempo = 8.48s
+Run 23: SP = 148.4050 | Tempo = 6.02s
+Run 24: SP = 152.2950 | Tempo = 6.71s
+Run 25: SP = 149.8900 | Tempo = 9.67s
+Run 26: SP = 151.7150 | Tempo = 9.13s
+Run 27: SP = 150.1350 | Tempo = 8.56s
+Run 28: SP = 150.8250 | Tempo = 9.94s
+Run 29: SP = 146.9800 | Tempo = 3.38s
+Run 30: SP = 148.1850 | Tempo = 4.93s
+Resumo para Pop=150 Mut=0.10 Elite=1 -> Min: 144.8000 | Média: 149.5798 | Max: 153.6600 | Tempo médio: 7.2066
+
+--- Pop=150 Mut=0.10 Elite=5 ---
+Run 1: SP = 146.2450 | Tempo = 9.90s
+Run 2: SP = 150.0350 | Tempo = 9.25s
+Run 3: SP = 146.1700 | Tempo = 8.05s
+Run 4: SP = 146.4150 | Tempo = 9.34s
+Run 5: SP = 154.2000 | Tempo = 9.07s
+Run 6: SP = 151.0300 | Tempo = 7.37s
+Run 7: SP = 152.8300 | Tempo = 2.55s
+Run 8: SP = 153.0950 | Tempo = 9.54s
+Run 9: SP = 149.3650 | Tempo = 6.24s
+Run 10: SP = 144.6000 | Tempo = 4.81s
+Run 11: SP = 146.2600 | Tempo = 8.22s
+Run 12: SP = 148.6750 | Tempo = 8.64s
+Run 13: SP = 146.0800 | Tempo = 9.94s
+Run 14: SP = 149.5100 | Tempo = 3.82s
+Run 15: SP = 151.3100 | Tempo = 8.92s
+Run 16: SP = 148.1950 | Tempo = 8.29s
+Run 17: SP = 143.6400 | Tempo = 9.58s
+Run 18: SP = 146.5150 | Tempo = 9.64s
+Run 19: SP = 146.6100 | Tempo = 9.25s
+Run 20: SP = 148.2500 | Tempo = 9.99s
+Run 21: SP = 153.1300 | Tempo = 5.25s
+Run 22: SP = 149.4750 | Tempo = 7.70s
+Run 23: SP = 150.2250 | Tempo = 8.88s
+Run 24: SP = 149.7450 | Tempo = 6.66s
+Run 25: SP = 153.2600 | Tempo = 8.16s
+Run 26: SP = 147.8350 | Tempo = 3.80s
+Run 27: SP = 147.8600 | Tempo = 6.60s
+Run 28: SP = 153.6250 | Tempo = 8.27s
+Run 29: SP = 144.3900 | Tempo = 5.64s
+Run 30: SP = 149.9600 | Tempo = 6.66s
+Resumo para Pop=150 Mut=0.10 Elite=5 -> Min: 143.6400 | Média: 148.9512 | Max: 154.2000 | Tempo médio: 7.6683
+
+--- Pop=150 Mut=0.10 Elite=10 ---
+Run 1: SP = 145.8750 | Tempo = 6.87s
+Run 2: SP = 144.0800 | Tempo = 9.15s
+Run 3: SP = 148.0600 | Tempo = 9.52s
+Run 4: SP = 145.0050 | Tempo = 9.64s
+Run 5: SP = 143.0850 | Tempo = 9.63s
+Run 6: SP = 144.8500 | Tempo = 8.13s
+Run 7: SP = 146.9100 | Tempo = 8.29s
+Run 8: SP = 144.2450 | Tempo = 9.43s
+Run 9: SP = 143.0850 | Tempo = 9.39s
+Run 10: SP = 144.8650 | Tempo = 8.14s
+Run 11: SP = 143.2800 | Tempo = 5.42s
+Run 12: SP = 146.2700 | Tempo = 9.90s
+Run 13: SP = 146.9600 | Tempo = 9.30s
+Run 14: SP = 146.2400 | Tempo = 8.89s
+Run 15: SP = 145.6850 | Tempo = 8.05s
+Run 16: SP = 144.8800 | Tempo = 9.31s
+Run 17: SP = 146.6400 | Tempo = 9.73s
+Run 18: SP = 146.8650 | Tempo = 7.33s
+Run 19: SP = 145.9900 | Tempo = 9.73s
+Run 20: SP = 149.3150 | Tempo = 9.06s
+Run 21: SP = 147.0750 | Tempo = 9.19s
+Run 22: SP = 147.4800 | Tempo = 8.92s
+Run 23: SP = 149.0250 | Tempo = 8.58s
+Run 24: SP = 150.3050 | Tempo = 7.85s
+Run 25: SP = 146.6600 | Tempo = 9.12s
+Run 26: SP = 147.9100 | Tempo = 8.92s
+Run 27: SP = 147.4650 | Tempo = 9.17s
+Run 28: SP = 143.5200 | Tempo = 9.79s
+Run 29: SP = 144.4500 | Tempo = 9.07s
+Run 30: SP = 144.6950 | Tempo = 6.21s
+Resumo para Pop=150 Mut=0.10 Elite=10 -> Min: 143.0850 | Média: 146.0257 | Max: 150.3050 | Tempo médio: 8.7240
+
+--- Pop=150 Mut=0.20 Elite=1 ---
+Run 1: SP = 152.2000 | Tempo = 9.65s
+Run 2: SP = 146.7850 | Tempo = 9.42s
+Run 3: SP = 153.8350 | Tempo = 8.19s
+Run 4: SP = 150.4250 | Tempo = 8.15s
+Run 5: SP = 148.0550 | Tempo = 5.58s
+Run 6: SP = 150.7950 | Tempo = 9.65s
+Run 7: SP = 149.8400 | Tempo = 7.07s
+Run 8: SP = 151.0150 | Tempo = 9.49s
+Run 9: SP = 150.3300 | Tempo = 5.22s
+Run 10: SP = 149.0800 | Tempo = 5.52s
+Run 11: SP = 149.9100 | Tempo = 8.24s
+Run 12: SP = 149.8950 | Tempo = 7.04s
+Run 13: SP = 148.1150 | Tempo = 4.84s
+Run 14: SP = 151.1350 | Tempo = 6.58s
+Run 15: SP = 151.1050 | Tempo = 4.90s
+Run 16: SP = 152.8150 | Tempo = 5.15s
+Run 17: SP = 149.2500 | Tempo = 8.98s
+Run 18: SP = 150.6550 | Tempo = 6.10s
+Run 19: SP = 151.1800 | Tempo = 6.33s
+Run 20: SP = 150.6800 | Tempo = 9.33s
+Run 21: SP = 148.8600 | Tempo = 9.43s
+Run 22: SP = 149.8850 | Tempo = 9.96s
+Run 23: SP = 149.8300 | Tempo = 7.84s
+Run 24: SP = 151.8400 | Tempo = 8.99s
+Run 25: SP = 149.3450 | Tempo = 8.42s
+Run 26: SP = 151.0000 | Tempo = 7.35s
+Run 27: SP = 149.5300 | Tempo = 5.17s
+Run 28: SP = 154.2100 | Tempo = 4.41s
+Run 29: SP = 150.9500 | Tempo = 8.93s
+Run 30: SP = 147.1300 | Tempo = 7.25s
+Resumo para Pop=150 Mut=0.20 Elite=1 -> Min: 146.7850 | Média: 150.3227 | Max: 154.2100 | Tempo médio: 7.4389
+
+--- Pop=150 Mut=0.20 Elite=5 ---
+Run 1: SP = 145.5600 | Tempo = 7.88s
+Run 2: SP = 144.9000 | Tempo = 6.53s
+Run 3: SP = 143.9200 | Tempo = 9.16s
+Run 4: SP = 143.5650 | Tempo = 7.63s
+Run 5: SP = 144.3650 | Tempo = 7.93s
+Run 6: SP = 152.4300 | Tempo = 7.29s
+Run 7: SP = 145.6450 | Tempo = 9.86s
+Run 8: SP = 147.7150 | Tempo = 8.36s
+Run 9: SP = 149.5550 | Tempo = 7.03s
+Run 10: SP = 147.3550 | Tempo = 9.98s
+Run 11: SP = 146.6900 | Tempo = 3.77s
+Run 12: SP = 148.0050 | Tempo = 9.96s
+Run 13: SP = 145.9100 | Tempo = 6.80s
+Run 14: SP = 147.8350 | Tempo = 9.35s
+Run 15: SP = 147.2450 | Tempo = 8.12s
+Run 16: SP = 148.6900 | Tempo = 9.58s
+Run 17: SP = 148.6200 | Tempo = 6.08s
+Run 18: SP = 145.8300 | Tempo = 6.00s
+Run 19: SP = 147.1900 | Tempo = 8.68s
+Run 20: SP = 146.7800 | Tempo = 4.76s
+Run 21: SP = 145.8500 | Tempo = 8.27s
+Run 22: SP = 146.5150 | Tempo = 5.91s
+Run 23: SP = 144.1850 | Tempo = 7.05s
+Run 24: SP = 144.7600 | Tempo = 8.45s
+Run 25: SP = 145.4400 | Tempo = 9.91s
+Run 26: SP = 147.8900 | Tempo = 7.91s
+Run 27: SP = 146.1750 | Tempo = 6.89s
+Run 28: SP = 147.5050 | Tempo = 7.24s
+Run 29: SP = 145.1950 | Tempo = 5.59s
+Run 30: SP = 148.9850 | Tempo = 8.55s
+Resumo para Pop=150 Mut=0.20 Elite=5 -> Min: 143.5650 | Média: 146.6768 | Max: 152.4300 | Tempo médio: 7.6837
+
+--- Pop=150 Mut=0.20 Elite=10 ---
+Run 1: SP = 143.7000 | Tempo = 9.32s
+Run 2: SP = 148.3300 | Tempo = 9.74s
+Run 3: SP = 146.3850 | Tempo = 9.25s
+Run 4: SP = 147.1100 | Tempo = 8.44s
+Run 5: SP = 149.0350 | Tempo = 8.80s
+Run 6: SP = 147.0300 | Tempo = 9.89s
+Run 7: SP = 148.9150 | Tempo = 7.88s
+Run 8: SP = 144.4500 | Tempo = 9.40s
+Run 9: SP = 148.1100 | Tempo = 8.75s
+Run 10: SP = 144.9750 | Tempo = 9.30s
+Run 11: SP = 144.3600 | Tempo = 8.78s
+Run 12: SP = 147.1550 | Tempo = 7.30s
+Run 13: SP = 148.7200 | Tempo = 8.59s
+Run 14: SP = 145.0500 | Tempo = 9.66s
+Run 15: SP = 145.4850 | Tempo = 6.09s
+Run 16: SP = 147.1750 | Tempo = 7.41s
+Run 17: SP = 148.8150 | Tempo = 7.54s
+Run 18: SP = 144.5900 | Tempo = 9.91s
+Run 19: SP = 147.9800 | Tempo = 7.33s
+Run 20: SP = 147.5000 | Tempo = 8.77s
+Run 21: SP = 144.1900 | Tempo = 8.81s
+Run 22: SP = 147.7650 | Tempo = 8.31s
+Run 23: SP = 143.4050 | Tempo = 6.83s
+Run 24: SP = 144.6950 | Tempo = 9.53s
+Run 25: SP = 144.0300 | Tempo = 8.14s
+Run 26: SP = 151.3950 | Tempo = 9.41s
+Run 27: SP = 146.4000 | Tempo = 7.13s
+Run 28: SP = 143.8550 | Tempo = 8.77s
+Run 29: SP = 149.1700 | Tempo = 9.95s
+Run 30: SP = 149.0500 | Tempo = 5.20s
+Resumo para Pop=150 Mut=0.20 Elite=10 -> Min: 143.4050 | Média: 146.6275 | Max: 151.3950 | Tempo médio: 8.4745
+
+==================== Resultados Finais ====================
+ Pop | Mut | Elite |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s)
+------------------------------------------------------------
+ 20 | 0.05 |     1 |   143.0850 |     147.1668 |  152.1000 |           6.81
+ 20 | 0.05 |     5 |   143.4050 |     146.7750 |  152.3550 |           5.86
+ 20 | 0.05 |    10 |   143.4050 |     147.7612 |  159.9350 |           6.56
+ 20 | 0.10 |     1 |   143.3700 |     146.9420 |  154.0950 |           7.10
+ 20 | 0.10 |     5 |   143.0850 |     146.2022 |  149.8950 |           4.38
+ 20 | 0.10 |    10 |   143.0850 |     146.9807 |  152.6400 |           4.66
+ 20 | 0.20 |     1 |   143.0850 |     146.5863 |  151.7550 |           7.66
+ 20 | 0.20 |     5 |   143.0850 |     146.5272 |  156.0600 |           2.47
+ 20 | 0.20 |    10 |   143.4050 |     146.9143 |  150.2750 |           2.79
+ 50 | 0.05 |     1 |   144.2850 |     148.9598 |  154.8600 |           8.37
+ 50 | 0.05 |     5 |   143.4050 |     146.8112 |  153.8950 |           6.15
+ 50 | 0.05 |    10 |   143.0850 |     146.6735 |  149.0550 |           6.95
+ 50 | 0.10 |     1 |   144.6950 |     148.3837 |  151.7900 |           8.11
+ 50 | 0.10 |     5 |   143.0850 |     147.0508 |  152.6600 |           4.30
+ 50 | 0.10 |    10 |   143.0850 |     146.0212 |  151.1700 |           4.86
+ 50 | 0.20 |     1 |   144.3600 |     148.1307 |  153.2550 |           7.65
+ 50 | 0.20 |     5 |   143.1600 |     146.5560 |  152.6400 |           3.69
+ 50 | 0.20 |    10 |   143.0850 |     146.8235 |  151.3900 |           3.34
+100 | 0.05 |     1 |   145.2400 |     149.3670 |  155.8050 |           8.24
+100 | 0.05 |     5 |   143.4050 |     147.0952 |  151.0400 |           8.29
+100 | 0.05 |    10 |   143.0850 |     146.3405 |  151.0850 |           7.03
+100 | 0.10 |     1 |   145.5550 |     149.1558 |  155.9300 |           8.01
+100 | 0.10 |     5 |   143.4450 |     147.1760 |  153.8100 |           7.72
+100 | 0.10 |    10 |   143.0850 |     146.3407 |  150.2750 |           5.69
+100 | 0.20 |     1 |   144.4200 |     148.9328 |  152.4600 |           8.09
+100 | 0.20 |     5 |   143.4900 |     147.1508 |  151.2150 |           7.77
+100 | 0.20 |    10 |   143.0850 |     145.3347 |  149.8800 |           5.04
+150 | 0.05 |     1 |   145.9050 |     149.8665 |  154.6300 |           7.82
+150 | 0.05 |     5 |   143.9350 |     147.6715 |  151.9000 |           7.63
+150 | 0.05 |    10 |   143.1600 |     146.3883 |  150.8650 |           8.51
+150 | 0.10 |     1 |   144.8000 |     149.5798 |  153.6600 |           7.21
+150 | 0.10 |     5 |   143.6400 |     148.9512 |  154.2000 |           7.67
+150 | 0.10 |    10 |   143.0850 |     146.0257 |  150.3050 |           8.72
+150 | 0.20 |     1 |   146.7850 |     150.3227 |  154.2100 |           7.44
+150 | 0.20 |     5 |   143.5650 |     146.6768 |  152.4300 |           7.68
+150 | 0.20 |    10 |   143.4050 |     146.6275 |  151.3950 |           8.47
