@@ -17,6 +17,9 @@ fprintf(fid, 'min: ');
 terms = [];
 for s = 1:N
     for i = 1:N
+        if s == i
+            continue
+        end
         terms{end+1} = sprintf('%.6f*g_%d_%d', D(s,i), s, i);
     end
 end
@@ -41,7 +44,9 @@ end
 % Restrição: distância máxima entre controladores não pode exceder Cmax
 for i = 1:N
     for j = i+1:N
-        fprintf(fid, '%.6f z_%d + %.6f z_%d - %.6f <= %d;\n', D(i,j), i, D(i,j), j, D(i,j), Cmax);
+        if D(i,j) > Cmax
+            fprintf(fid, 'z_%d +  z_%d <= 1;\n', i, j);
+        end
     end
 end
 
