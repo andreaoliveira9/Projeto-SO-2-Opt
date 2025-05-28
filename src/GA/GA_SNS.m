@@ -18,7 +18,6 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
     bestScore = Inf;
     bestNodes = [];
     bestFoundTime = 0;
-    evaluatedCache = containers.Map();
     startTime = tic;
     
     population = cell(populationSize, 1);
@@ -28,14 +27,7 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
     % Initialize population
     for i = 1:populationSize
         population{i} = randperm(numNodes, n);
-        key = mat2str(sort(population{i}));
-        if isKey(evaluatedCache, key)
-            avgSP = evaluatedCache(key).avgSP;
-            maxSP = evaluatedCache(key).maxSP;
-        else
-            [avgSP, maxSP] = PerfSNS(G, population{i});
-            evaluatedCache(key) = struct('avgSP', avgSP, 'maxSP', maxSP);
-        end
+        [avgSP, maxSP] = PerfSNS(G, population{i});
         
         % Check if solution is feasible (maxSP <= Cmax)
         if maxSP <= Cmax
@@ -88,17 +80,11 @@ function [bestScore, bestNodes, generations, bestFoundTime] = GA_SNS(G, time, n,
             end
     
             offspringPopulation{i} = child;
-            key = mat2str(sort(child));
-            if isKey(evaluatedCache, key)
-                avgSP = evaluatedCache(key).avgSP;
-                maxSP = evaluatedCache(key).maxSP;
-            else
-                if toc(startTime) >= time
-                    break;
-                end
-                [avgSP, maxSP] = PerfSNS(G, child);
-                evaluatedCache(key) = struct('avgSP', avgSP, 'maxSP', maxSP);
+            
+            if toc(startTime) >= time
+                break;
             end
+            [avgSP, maxSP] = PerfSNS(G, child);
             
             % Check if solution is feasible (maxSP <= Cmax)
             if maxSP <= Cmax
