@@ -68,7 +68,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
         end
         
         % FASE 1: Construção gulosa randomizada com pré-filtragem
-        currentNodes = GreedyRandomizedConstruction_Otimizada(D, validNeighbors, ...
+        currentNodes = GreedyRandomizedConstruction_Optimized(D, validNeighbors, ...
             centralityOrder, n, r, numNodes);
             
         if toc(globalStartTime) >= time
@@ -98,7 +98,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
         
         % FASE 2: Busca local otimizada com early stopping
         [currentNodes, currentScore, localIterations] = ...
-            LocalSearch_SA_HC_Otimizada(G, D, currentNodes, currentScore, Cmax, ...
+            LocalSearch_SA_HC_Optimized(G, D, currentNodes, currentScore, Cmax, ...
             validNeighbors, scoreCache, globalStartTime, time);
         
         totalIterations = totalIterations + localIterations;
@@ -112,9 +112,9 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
     end
 end
 
-function nodes = GreedyRandomizedConstruction_Otimizada(D, validNeighbors, ...
+function nodes = GreedyRandomizedConstruction_Optimized(D, validNeighbors, ...
     centralityOrder, n, r, numNodes)
-% GreedyRandomizedConstruction_Otimizada - Construção gulosa com pré-filtragem otimizada
+% GreedyRandomizedConstruction_Optimized- Construção gulosa com pré-filtragem otimizada
 %
 % INPUTS:
 %   D               - matriz de distâncias pré-calculada
@@ -184,9 +184,9 @@ function nodes = GreedyRandomizedConstruction_Otimizada(D, validNeighbors, ...
 end
 
 function [bestNodes, bestScore, localIterations] = ...
-    LocalSearch_SA_HC_Otimizada(G, D, currentNodes, currentScore, Cmax, ...
+    LocalSearch_SA_HC_Optimized(G, D, currentNodes, currentScore, Cmax, ...
     validNeighbors, scoreCache, globalStartTime, maxTime)
-% LocalSearch_SA_HC_Otimizada - Busca local otimizada com cache e early stopping
+% LocalSearch_SA_HC_Optimized - Busca local otimizada com cache e early stopping
 %
 % INPUTS:
 %   G               - grafo da rede
