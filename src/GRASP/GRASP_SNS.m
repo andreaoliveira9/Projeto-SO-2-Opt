@@ -110,19 +110,17 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
             
             % Check if adding this node would violate the Cmax constraint
             % Only needed for k > 1
-            if k > 1
-                maxDistBetweenServers = 0;
-                for a = 1:k-1
-                    serverA = nodes(a);
-                    % Distance to the candidate node
-                    dist = D(serverA, candidate);
-                    maxDistBetweenServers = max(maxDistBetweenServers, dist);
-                end
-                
-                % Skip this candidate if it violates Cmax
-                if maxDistBetweenServers > Cmax
-                    continue;
-                end
+            maxDistBetweenServers = 0;
+            for a = 1:k-1
+                serverA = nodes(a);
+                % Distance to the candidate node
+                dist = D(serverA, candidate);
+                maxDistBetweenServers = max(maxDistBetweenServers, dist);
+            end
+            
+            % Skip this candidate if it violates Cmax
+            if maxDistBetweenServers > Cmax
+                continue;
             end
             
             % Mark as valid candidate
