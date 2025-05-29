@@ -48,7 +48,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
         
         % Construção gulosa randomizada otimizada
         currentNodes = GreedyRandomizedConstruction_Otimizada(D, validNeighbors, ...
-            centralityOrder, n, r, Cmax, numNodes);
+            centralityOrder, n, r, numNodes);
             
         if toc(globalStartTime) >= time
             break;
@@ -90,7 +90,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
 end
 
 function nodes = GreedyRandomizedConstruction_Otimizada(D, validNeighbors, ...
-    centralityOrder, n, r, Cmax, numNodes)
+    centralityOrder, n, r, numNodes)
     % Construção gulosa randomizada otimizada com pré-filtragem
     
     nodes = zeros(1, n);
