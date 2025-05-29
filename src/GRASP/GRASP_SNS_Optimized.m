@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax)
+function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax, seed)
     % GRASP_SNS_Otimizado - Versão otimizada do GRASP_SNS
     % 
     % Principais otimizações:
@@ -6,7 +6,12 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
     % 2. Cache de distâncias e estruturas auxiliares
     % 3. Avaliação incremental de soluções
     % 4. Busca local mais eficiente com early stopping
-    
+    % Configurar seed para reprodutibilidade
+
+    if nargin >= 6 && ~isempty(seed)
+        rng(seed); % Definir seed do gerador de números aleatórios
+    end
+
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;

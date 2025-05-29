@@ -1,10 +1,14 @@
-function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax)
+function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
     % GRASP_SNS GRASP algorithm for Server Node Selection with Cmax constraint
     % Outputs:
     %   bestScore - best average shortest path length
     %   bestNodes - best solution found
     %   totalIterations - number of local improvement loops performed
     %   bestFoundTime - time when best solution was found
+
+    if nargin >= 6 && ~isempty(seed)
+        rng(seed); % Definir seed do gerador de números aleatórios
+    end
 
     bestScore = Inf;
     bestNodes = [];
