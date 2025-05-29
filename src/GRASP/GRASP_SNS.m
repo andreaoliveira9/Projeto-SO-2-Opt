@@ -1,59 +1,77 @@
 function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
-    % GRASP_SNS GRASP algorithm for Server Node Selection with Cmax constraint
-    % Outputs:
-    %   bestScore - best average shortest path length
-    %   bestNodes - best solution found
-    %   totalIterations - number of local improvement loops performed
-    %   bestFoundTime - time when best solution was found
-
+% GRASP_SNS - Algoritmo GRASP para seleção de nós servidor com restrição de distância máxima
+%
+% INPUTS:
+%   G     - grafo da rede (objeto graph do MATLAB)
+%   time  - tempo limite de execução em segundos
+%   n     - número de nós servidor a selecionar
+%   r     - tamanho da Lista Restrita de Candidatos (RCL)
+%   Cmax  - distância máxima permitida entre qualquer par de servidores
+%   seed  - semente para o gerador de números aleatórios (opcional)
+%
+% OUTPUTS:
+%   bestScore      - melhor valor da função objetivo encontrado
+%   bestNodes      - melhor solução encontrada (array com os nós selecionados)
+%   totalIterations - número total de iterações de busca local realizadas
+%   bestFoundTime  - tempo em que a melhor solução foi encontrada
+    
+    % Configuração inicial do gerador de números aleatórios
     if nargin >= 6 && ~isempty(seed)
-        rng(seed); % Definir seed do gerador de números aleatórios
+        rng(seed);
     end
 
+    % Inicialização das variáveis de retorno
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;
     bestFoundTime = 0;
 
+    % Controle de tempo e cálculo prévio das distâncias
     globalStartTime = tic;
-    D = distances(G);
+    D = distances(G); % Matriz de distâncias entre todos os pares de nós
 
+    % Loop principal do GRASP: executa até esgotar o tempo limite
     while true
         elapsed = toc(globalStartTime);
         if elapsed >= time
             break;
         end
     
+        % Verificação de tempo restante suficiente
         timeLeft = time - elapsed;
-        if timeLeft < 0.01  % margem mínima para executar algo útil
+        if timeLeft < 0.01
             break;
         end
     
+        % FASE 1: Construção gulosa randomizada
         currentNodes = GreedyRandomizedConstruction(G, D, n, r, Cmax);
         if toc(globalStartTime) >= time
             break;
         end
 
+        % Validação da solução construída
         if isempty(currentNodes) || length(unique(currentNodes)) < n
             continue;
         end
 
+        % Avaliação da solução e verificação da restrição Cmax
         [currentScore, maxSP] = PerfSNS(G, currentNodes);
         if maxSP > Cmax
             continue;
         end
         
-        % Checa tempo restante antes da busca local
+        % Verificação de tempo antes da busca local
         if toc(globalStartTime) >= time
             break;
         end
 
-        % --- Call local search function ---
+        % FASE 2: Busca local com Hill Climbing
         [currentNodes, currentScore, localIterations, ~] = ...
             LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, globalStartTime, time);
 
         totalIterations = totalIterations + localIterations;
 
+        % Atualização da melhor solução encontrada
         if currentScore < bestScore
             bestScore = currentScore;
             bestNodes = currentNodes;
@@ -64,43 +82,43 @@ end
 
 
 function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
-    % Generate a greedy randomized solution for the Server Node Selection problem
-    % with Cmax constraint
-    % Input:
-    %   G - graph of the network
-    %   D - precomputed distances matrix
-    %   n - number of nodes to include in the solution
-    %   r - size of the Restricted Candidate List (RCL)
-    %   Cmax - maximum allowed shortest path length between any pair of server nodes
-    % Output:
-    %   nodes - array of selected nodes, empty if no feasible solution found
+% GreedyRandomizedConstruction - Construção gulosa randomizada para seleção de nós servidor
+%
+% INPUTS:
+%   G     - grafo da rede
+%   D     - matriz de distâncias pré-calculada entre todos os pares de nós
+%   n     - número de nós a selecionar
+%   r     - tamanho da Lista Restrita de Candidatos (RCL)
+%   Cmax  - distância máxima permitida entre servidores
+%
+% OUTPUTS:
+%   nodes - array com os nós selecionados (vazio se solução inviável)
     
     numNodes = numnodes(G);
     nodes = zeros(1, n);
-    remaining = 1:numNodes;
+    remaining = 1:numNodes; % Nós ainda não selecionados
     
-    % Start with a random node with good centrality
+    % Cálculo da centralidade de cada nó (soma das distâncias a todos os outros)
     centrality = zeros(1, numNodes);
     for i = 1:numNodes
-        centrality(i) = sum(D(i, :));  % Lower is better (total distance to all other nodes)
+        centrality(i) = sum(D(i, :));
     end
     
-    % Select first node from RCL based on centrality
+    % Seleção do primeiro nó: escolha randomizada entre os mais centrais
     [~, sortedIndices] = sort(centrality);
     rclSize = min(r, numNodes);
-    rcl = sortedIndices(1:rclSize);
+    rcl = sortedIndices(1:rclSize); % Lista restrita de candidatos
     selectedIdx = randi(rclSize);
     nodes(1) = rcl(selectedIdx);
     
-    % Remove selected node from remaining
+    % Remoção do nó selecionado da lista de candidatos
     remaining(remaining == nodes(1)) = [];
     
-    % Flag to indicate if we can't find a valid solution
     invalidSolution = false;
     
-    % For each subsequent node
+    % Seleção iterativa dos nós restantes
     for k = 2:n
-        % Calculate benefit of adding each remaining node
+        % Avaliação do benefício de cada nó candidato
         benefit = zeros(1, length(remaining));
         validCandidates = false(1, length(remaining));
         
@@ -108,26 +126,22 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
             candidate = remaining(i);
             tempSolution = [nodes(1:k-1), candidate];
             
-            % Check if adding this node would violate the Cmax constraint
-            % Only needed for k > 1
+            % Verificação da restrição Cmax: distância máxima entre servidores
             maxDistBetweenServers = 0;
             for a = 1:k-1
                 serverA = nodes(a);
-                % Distance to the candidate node
                 dist = D(serverA, candidate);
                 maxDistBetweenServers = max(maxDistBetweenServers, dist);
             end
             
-            % Skip this candidate if it violates Cmax
+            % Exclusão de candidatos que violam a restrição
             if maxDistBetweenServers > Cmax
                 continue;
             end
             
-            % Mark as valid candidate
             validCandidates(i) = true;
             
-            % Calculate a proxy measure for solution quality
-            % (Sum of distances from all nodes to their closest server)
+            % Cálculo da função objetivo: soma das distâncias mínimas
             totalDistance = 0;
             for node = 1:numNodes
                 if ~ismember(node, tempSolution)
@@ -136,41 +150,33 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
                 end
             end
             
-            % We want to minimize, so negative benefit
+            % Benefício negativo para minimização
             benefit(i) = -totalDistance;
         end
         
-        % Check if we have any valid candidates
+        % Verificação de existência de candidatos válidos
         if ~any(validCandidates)
             invalidSolution = true;
             break;
         end
         
-        % Get indices of valid candidates
+        % Construção da lista restrita de candidatos (RCL)
         validIndices = find(validCandidates);
-        
-        % Get benefits of valid candidates
         validBenefits = benefit(validCandidates);
-        
-        % Build RCL with top r valid candidates
         [~, sortedIndices] = sort(validBenefits, 'descend');
         
-        % Determine size of RCL (minimum of r and valid remaining nodes)
         rclSize = min(r, length(validIndices));
         rcl = remaining(validIndices(sortedIndices(1:rclSize)));
         
-        % Randomly select a node from the RCL
+        % Seleção aleatória dentro da RCL
         selectedIdx = randi(rclSize);
         selectedNode = rcl(selectedIdx);
         
-        % Add the selected node to the solution
         nodes(k) = selectedNode;
-        
-        % Remove selected node from remaining
         remaining = remaining(remaining ~= selectedNode);
     end
     
-    % Return empty array if no valid solution found
+    % Retorno de solução vazia se infeasível
     if invalidSolution
         nodes = [];
     end
@@ -178,6 +184,21 @@ end
 
 function [bestNodes, bestScore, localIterations, improved] = ...
     LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, globalStartTime, maxTime)
+% LocalSearch_SA_HC - Busca local usando Hill Climbing com movimentos de swap
+%
+% INPUTS:
+%   G               - grafo da rede
+%   currentNodes    - solução inicial (array com nós selecionados)
+%   currentScore    - valor da função objetivo da solução inicial
+%   Cmax           - distância máxima permitida entre servidores
+%   globalStartTime - tempo de início da execução global
+%   maxTime        - tempo máximo total de execução
+%
+% OUTPUTS:
+%   bestNodes       - melhor solução encontrada após busca local
+%   bestScore       - valor da função objetivo da melhor solução
+%   localIterations - número de iterações de busca local realizadas
+%   improved        - flag indicando se houve melhoria na última iteração
 
     numNodes = numnodes(G);
     localIterations = 0;
@@ -185,28 +206,34 @@ function [bestNodes, bestScore, localIterations, improved] = ...
     bestNodes = currentNodes;
     bestScore = currentScore;
 
+    % Loop de melhoria: continua enquanto houver melhorias
     while improved && toc(globalStartTime) < maxTime
         localIterations = localIterations + 1;
         improved = false;
-        notSelected = setdiff(1:numNodes, bestNodes);
+        notSelected = setdiff(1:numNodes, bestNodes); % Nós não selecionados
         bestNeighborScore = bestScore;
         bestSwap = [0, 0];
 
+        % Exploração da vizinhança: swap de cada nó selecionado
         for i = 1:length(bestNodes)
             for j = 1:length(notSelected)
                 if toc(globalStartTime) >= maxTime
                     return;
                 end
 
+                % Geração de solução vizinha por swap
                 neighborNodes = bestNodes;
                 neighborNodes(i) = notSelected(j);
 
+                % Avaliação da solução vizinha
                 [neighborScore, neighborMaxSP] = PerfSNS(G, neighborNodes);
 
+                % Verificação da restrição Cmax
                 if neighborMaxSP > Cmax
                     continue;
                 end
 
+                % Identificação de melhoria (critério Hill Climbing)
                 if neighborScore < bestNeighborScore
                     bestNeighborScore = neighborScore;
                     bestSwap = [i, notSelected(j)];
@@ -215,6 +242,7 @@ function [bestNodes, bestScore, localIterations, improved] = ...
             end
         end
 
+        % Aplicação da melhor melhoria encontrada
         if improved
             bestNodes(bestSwap(1)) = bestSwap(2);
             bestScore = bestNeighborScore;
