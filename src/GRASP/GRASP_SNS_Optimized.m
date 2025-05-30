@@ -10,10 +10,10 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
 %   seed  - semente para o gerador de números aleatórios (opcional)
 %
 % OUTPUTS:
-%   bestScore      - melhor valor da função objetivo encontrado
-%   bestNodes      - melhor solução encontrada (array com os nós selecionados)
+%   bestScore       - melhor valor da função objetivo encontrado
+%   bestNodes       - melhor solução encontrada (array com os nós selecionados)
 %   totalIterations - número total de iterações de busca local realizadas
-%   bestFoundTime  - tempo em que a melhor solução foi encontrada
+%   bestFoundTime   - tempo em que a melhor solução foi encontrada
 %
 % OTIMIZAÇÕES IMPLEMENTADAS:
 %   1. Pré-filtragem de candidatos baseada em Cmax
@@ -120,9 +120,9 @@ function nodes = GreedyRandomizedConstruction_Optimized(D, validNeighbors, ...
 %   D               - matriz de distâncias pré-calculada
 %   validNeighbors  - lista de adjacências de candidatos válidos por Cmax
 %   centralityOrder - nós ordenados por centralidade decrescente
-%   n              - número de nós a selecionar
-%   r              - tamanho da Lista Restrita de Candidatos (RCL)
-%   numNodes       - número total de nós no grafo
+%   n               - número de nós a selecionar
+%   r               - tamanho da Lista Restrita de Candidatos (RCL)
+%   numNodes        - número total de nós no grafo
 %
 % OUTPUTS:
 %   nodes - array com os nós selecionados (vazio se solução infeasível)
@@ -193,11 +193,11 @@ function [bestNodes, bestScore, localIterations] = ...
 %   D               - matriz de distâncias pré-calculada
 %   currentNodes    - solução inicial (array com nós selecionados)
 %   currentScore    - valor da função objetivo da solução inicial
-%   Cmax           - distância máxima permitida entre servidores
+%   Cmax            - distância máxima permitida entre servidores
 %   validNeighbors  - lista de adjacências de candidatos válidos
-%   scoreCache     - cache de avaliações já computadas
+%   scoreCache      - cache de avaliações já computadas
 %   globalStartTime - tempo de início da execução global
-%   maxTime        - tempo máximo total de execução
+%   maxTime         - tempo máximo total de execução
 %
 % OUTPUTS:
 %   bestNodes       - melhor solução encontrada após busca local
