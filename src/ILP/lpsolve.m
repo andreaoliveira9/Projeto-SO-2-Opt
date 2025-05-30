@@ -17,22 +17,23 @@ fprintf(fid, 'min: ');
 terms = [];
 for s = 1:N
     for i = 1:N
-        if s == i
-            continue
+        if s ~= i
+            terms{end+1} = sprintf('%.6f*g_%d_%d', D(s,i), s, i);
         end
-        terms{end+1} = sprintf('%.6f*g_%d_%d', D(s,i), s, i);
     end
 end
 fprintf(fid, '%s;\n', strjoin(terms, ' + '));
+fprintf(fid, '\n');
 
 % Restrição: exatamente n servidores
-fprintf(fid, '\n');
 fprintf(fid, '%s = %d;\n', strjoin(arrayfun(@(i) sprintf('z_%d', i), 1:N, 'UniformOutput', false), ' + '), n_servers);
+fprintf(fid, '\n');
 
 % Restrição: cada nó é servido por exatamente um servidor
 for s = 1:N
     fprintf(fid, '%s = 1;\n', strjoin(arrayfun(@(i) sprintf('g_%d_%d', s, i), 1:N, 'UniformOutput', false), ' + '));
 end
+fprintf(fid, '\n');
 
 % Restrição: só pode ser servido por um nó que seja servidor
 for s = 1:N
@@ -40,6 +41,7 @@ for s = 1:N
         fprintf(fid, 'g_%d_%d - z_%d <= 0;\n', s, i, i);
     end
 end
+fprintf(fid, '\n');
 
 % Restrição: distância máxima entre controladores não pode exceder Cmax
 for i = 1:N
@@ -49,6 +51,7 @@ for i = 1:N
         end
     end
 end
+fprintf(fid, '\n');
 
 % Variáveis binárias
 fprintf(fid, '\n');
