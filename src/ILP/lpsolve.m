@@ -47,7 +47,7 @@ fprintf(fid, '\n');
 % Restrição: só pode ser servido por um nó que seja servidor
 for s = 1:N
     for i = 1:N
-        fprintf(fid, 'g_%d_%d - z_%d <= 0;\n', s, i, i);
+        fprintf(fid, 'g_%d_%d <= z_%d;\n', s, i, i);
     end
 end
 fprintf(fid, '\n');
