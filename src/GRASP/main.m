@@ -27,7 +27,7 @@ fprintf('Executando GRASP %d vezes...\n', numRuns);
 
 for i = 1:numRuns
     fprintf('\n--- Execução %d ---\n', i);
-    [score, nodes, ~, foundTime] = GRASP_SNS(G, time, n, r, Cmax);
+    [score, nodes, ~, foundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax);
     [avgSP, maxSP] = PerfSNS(G, nodes);
 
     allScores(i) = avgSP;

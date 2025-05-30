@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import re
 
+images_path = "images/"
+
 
 # Função para extrair dados da tabela final de um ficheiro de texto
 def extrair_dados_tune(content):
@@ -65,7 +67,7 @@ axes[1].grid(True)
 axes[1].legend()
 
 plt.tight_layout()
-plt.savefig("comparacao_sp_tempo_opt_vs_normal.png")
+plt.savefig(images_path + "comparacao_sp_tempo_opt_vs_normal.png")
 
 # Comparação entre 10 runs de 30 segundos e 30 runs de 10 segundos (sem otimização)
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -91,7 +93,7 @@ axes[1].grid(True)
 axes[1].legend()
 
 plt.tight_layout()
-plt.savefig("comparacao_10_30_vs_30_10_runs.png")
+plt.savefig(images_path + "comparacao_10_30_vs_30_10_runs.png")
 
 # Comparação entre 10 runs de 30 segundos e 30 runs de 10 segundos (com otimização)
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
@@ -126,4 +128,4 @@ axes[1].grid(True)
 axes[1].legend()
 
 plt.tight_layout()
-plt.savefig("comparacao_10_30_vs_30_10_runs_opt.png")
+plt.savefig(images_path + "comparacao_10_30_vs_30_10_runs_opt.png")
