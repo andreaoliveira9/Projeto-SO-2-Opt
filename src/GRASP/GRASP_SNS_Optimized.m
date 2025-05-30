@@ -14,12 +14,6 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
 %   bestNodes       - melhor solução encontrada (array com os nós selecionados)
 %   totalIterations - número total de iterações de busca local realizadas
 %   bestFoundTime   - tempo em que a melhor solução foi encontrada
-%
-% OTIMIZAÇÕES IMPLEMENTADAS:
-%   1. Pré-filtragem de candidatos baseada em Cmax
-%   2. Cache de distâncias e estruturas auxiliares
-%   3. Avaliação incremental de soluções
-%   4. Busca local mais eficiente com early stopping
 
     % Configuração inicial do gerador de números aleatórios
     if nargin >= 6 && ~isempty(seed)

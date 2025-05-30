@@ -99,10 +99,7 @@ function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
     remaining = 1:numNodes; % Nós ainda não selecionados
     
     % Cálculo da centralidade de cada nó (soma das distâncias a todos os outros)
-    centrality = zeros(1, numNodes);
-    for i = 1:numNodes
-        centrality(i) = sum(D(i, :));
-    end
+    centrality = 1 ./ sum(D, 2)';
     
     % Seleção do primeiro nó: escolha randomizada entre os mais centrais
     [~, sortedIndices] = sort(centrality);
