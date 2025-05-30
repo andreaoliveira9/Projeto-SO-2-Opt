@@ -27,19 +27,19 @@ Improved solution              29017 after     284415 iter,      7739 nodes (gap
 
 lp_solve optimization was stopped due to time-out.
  
-Optimal solution               29017 after     426369 iter,     10803 nodes (gap 13.9%).
+Optimal solution               29017 after     433686 iter,     10919 nodes (gap 13.9%).
 
 Relative numeric accuracy ||*|| = 4.21885e-15
 
  MEMO: lp_solve version 5.5.2.11 for 64 bit OS, with 64 bit REAL variables.
-      In the total iteration count 426369, 54619 (12.8%) were bound flips.
-      There were 5618 refactorizations, 0 triggered by time and 0 by density.
-       ... on average 66.2 major pivots per refactorization.
+      In the total iteration count 433686, 55439 (12.8%) were bound flips.
+      There were 5682 refactorizations, 0 triggered by time and 0 by density.
+       ... on average 66.6 major pivots per refactorization.
       The largest [LUSOL v2.2.1.0] fact(B) had 91651 NZ entries, 1.0x largest basis.
       The maximum B&B level was 119, 0.0x MIP order, 17 at the optimal solution.
       The constraint matrix inf-norm is 1, with a dynamic range of 1.
-      Time to load data was 0.000 seconds, presolve used 1.000 seconds,
-       ... 300.000 seconds in simplex solver, in total 301.000 seconds.
+      Time to load data was 0.000 seconds, presolve used 0.000 seconds,
+       ... 301.000 seconds in simplex solver, in total 301.000 seconds.
 Suboptimal solution
 
 Value of objective function: 29017.00000000

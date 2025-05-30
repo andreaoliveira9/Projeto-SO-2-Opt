@@ -63,7 +63,6 @@ end
 fprintf(fid, '\n');
 
 % Variáveis binárias
-fprintf(fid, '\n');
 for i = 1:N
     fprintf(fid, 'bin z_%d;\n', i);
 end
