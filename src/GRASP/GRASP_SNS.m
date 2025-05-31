@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
+function [bestScore, bestNodes, GRASPIterations, localSeachIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
 % GRASP_SNS - Algoritmo GRASP para seleção de nós servidor com restrição de distância máxima
 %
 % INPUTS:
@@ -10,10 +10,11 @@ function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFound
 %   seed  - semente para o gerador de números aleatórios (opcional)
 %
 % OUTPUTS:
-%   bestScore      - melhor valor da função objetivo encontrado
-%   bestNodes      - melhor solução encontrada (array com os nós selecionados)
-%   totalIterations - número total de iterações de busca local realizadas
-%   bestFoundTime  - tempo em que a melhor solução foi encontrada
+%   bestScore            - melhor valor da função objetivo encontrado
+%   bestNodes            - melhor solução encontrada (array com os nós selecionados)
+%   GRASPIterations      - número total de iterações do GRASP
+%   localSeachIterations - número total de iterações de busca local realizadas
+%   bestFoundTime        - tempo em que a melhor solução foi encontrada
     
     % Configuração inicial do gerador de números aleatórios
     if nargin >= 6 && ~isempty(seed)
@@ -23,7 +24,7 @@ function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFound
     % Inicialização das variáveis de retorno
     bestScore = Inf;
     bestNodes = [];
-    totalIterations = 0;
+    GRASPIterations = 0;
     localSeachIterations = 0;
     bestFoundTime = 0;
 
@@ -70,7 +71,7 @@ function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFound
         [currentNodes, currentScore, localIterations] = ...
             LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, globalStartTime, time);
 
-        totalIterations = totalIterations + 1;
+        GRASPIterations = GRASPIterations + 1;
         localSeachIterations = localIterations + 1;
 
         % Atualização da melhor solução encontrada

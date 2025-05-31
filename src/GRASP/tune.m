@@ -27,7 +27,7 @@ for idx = 1:length(rValues)
     r = rValues(idx);
     scores = zeros(1, numRuns);
     times = zeros(1, numRuns);
-    totalIterations = zeros(1, numRuns);
+    GRASPIterations = zeros(1, numRuns);
     localSeachIterations = zeros(1, numRuns);
     fprintf('\n--- r = %d ---\n', r);
 
@@ -36,21 +36,21 @@ for idx = 1:length(rValues)
         [avgSP, ~] = PerfSNS(G, nodes);
         scores(i) = avgSP;
         times(i) = foundTime;
-        totalIterations(i) = iterations;
+        GRASPIterations(i) = iterations;
         localSeachIterations(i) = searchIterations;
-        fprintf('Run %d: SP = %.4f | Tempo = %.2fs | Iterações Totais = %d | Iterações Local Search = %d\n', i, avgSP, foundTime, iterations, searchIterations);
+        fprintf('Run %d: SP = %.4f | Tempo = %.2fs | Iterações GRASP = %d | Iterações Local Search = %d\n', i, avgSP, foundTime, iterations, searchIterations);
     end
 
-    results(idx, :) = [r, min(scores), mean(scores), max(scores), mean(times), mean(totalIterations), mean(localSeachIterations)];
+    results(idx, :) = [r, min(scores), mean(scores), max(scores), mean(times), mean(GRASPIterations), mean(localSeachIterations)];
 
-    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f | Iterações Totais: %.4f | Iterações Local Search: %.4f \n', ...
-        r, min(scores), mean(scores), max(scores), mean(times), mean(totalIterations), mean(localSeachIterations));
+    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f | Iterações GRASP: %.4f | Iterações Local Search: %.4f \n', ...
+        r, min(scores), mean(scores), max(scores), mean(times), mean(GRASPIterations), mean(localSeachIterations));
 end
 
 % --- Tabela final ---
-fprintf('\n========================================== Resultados Finais ==========================================\n');
-fprintf(' r |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s) | Iterações Totais | Iterações Local Search\n');
-fprintf('---------------------------------------------------------------------------------------------------------\n');
+fprintf('\n========================================== Resultados Finais =========================================\n');
+fprintf(' r |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s) | Iterações GRASP | Iterações Local Search\n');
+fprintf('--------------------------------------------------------------------------------------------------------\n');
 for i = 1:size(results,1)
     fprintf('%2d | %10.4f | %12.4f | %9.4f | %14.2f | %.2f | %.2f\n', ...
         results(i,1), results(i,2), results(i,3), results(i,4), results(i,5), results(i,6), results(i,7));
