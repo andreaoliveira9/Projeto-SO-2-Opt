@@ -32,7 +32,7 @@ for idx = 1:length(rValues)
     fprintf('\n--- r = %d ---\n', r);
 
     for i = 1:numRuns
-        [score, nodes, iterations, searchIterations, foundTime] = GRASP_SNS(G, time, n, r, Cmax);
+        [score, nodes, iterations, searchIterations, foundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax);
         [avgSP, ~] = PerfSNS(G, nodes);
         scores(i) = avgSP;
         times(i) = foundTime;
@@ -43,8 +43,8 @@ for idx = 1:length(rValues)
 
     results(idx, :) = [r, min(scores), mean(scores), max(scores), mean(times), mean(GRASPIterations), mean(localSeachIterations)];
 
-    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f | Iterações GRASP: %.4f | Iterações Local Search: %.4f \n', ...
-        r, min(scores), mean(scores), max(scores), mean(times), mean(GRASPIterations), mean(localSeachIterations));
+    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f\n', ...
+        r, min(scores), mean(scores), max(scores), mean(times));
 end
 
 % --- Tabela final ---
