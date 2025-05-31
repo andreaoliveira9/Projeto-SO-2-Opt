@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 import re
 
 images_path = "images/"
@@ -7,11 +8,33 @@ images_path = "images/"
 
 # Função para extrair dados da tabela final de um ficheiro de texto
 def extrair_dados_tune(content):
-    pattern = r"(\d+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)\s*\|\s*([\d.]+)"
+    # Regex com grupos opcionais a partir do "Tempo Médio (s)"
+    pattern = (
+        r"(\d+)\s*\|\s*"  # r
+        r"([\d.]+)\s*\|\s*"  # Min SP
+        r"([\d.]+)\s*\|\s*"  # Média SP
+        r"([\d.]+)"  # Max SP
+        r"(?:\s*\|\s*([\d.]+))?"  # Tempo Médio (s) (opcional)
+        r"(?:\s*\|\s*([\d.]+))?"  # Iterações GRASP (opcional)
+        r"(?:\s*\|\s*([\d.]+))?"  # Iterações Local Search (opcional)
+    )
+
     matches = re.findall(pattern, content)
     df = pd.DataFrame(
-        matches, columns=["r", "Min SP", "Média SP", "Max SP", "Tempo Médio (s)"]
+        matches,
+        columns=[
+            "r",
+            "Min SP",
+            "Média SP",
+            "Max SP",
+            "Tempo Médio (s)",
+            "Iterações GRASP",
+            "Iterações Local Search",
+        ],
     )
+
+    # Converte para float e int, tratando campos ausentes como NaN
+    df = df.replace("", np.nan)
     df = df.astype(
         {
             "r": int,
@@ -19,8 +42,11 @@ def extrair_dados_tune(content):
             "Média SP": float,
             "Max SP": float,
             "Tempo Médio (s)": float,
+            "Iterações GRASP": float,
+            "Iterações Local Search": float,
         }
     )
+
     return df
 
 
@@ -46,8 +72,8 @@ df_30_10_opt = extrair_dados_tune(content_30_10_opt)
 # Comparação Otimizada vs Não Otimizada para 30 runs e 10 segundos
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
 
-axes[0].plot(df_30_10["r"], df_30_10["Média SP"], marker="o", label="Não Otimizada")
-axes[0].plot(df_30_10_opt["r"], df_30_10_opt["Média SP"], marker="o", label="Otimizada")
+axes[0].plot(df_10_30["r"], df_10_30["Média SP"], marker="o", label="Não Otimizada")
+axes[0].plot(df_10_30_opt["r"], df_10_30_opt["Média SP"], marker="o", label="Otimizada")
 axes[0].set_title("Média do Shortest Path (SP) vs r")
 axes[0].set_xlabel("Parâmetro r")
 axes[0].set_ylabel("Média SP")
@@ -55,10 +81,10 @@ axes[0].grid(True)
 axes[0].legend()
 
 axes[1].plot(
-    df_30_10["r"], df_30_10["Tempo Médio (s)"], marker="o", label="Não Otimizada"
+    df_10_30["r"], df_10_30["Tempo Médio (s)"], marker="o", label="Não Otimizada"
 )
 axes[1].plot(
-    df_30_10_opt["r"], df_30_10_opt["Tempo Médio (s)"], marker="o", label="Otimizada"
+    df_10_30_opt["r"], df_10_30_opt["Tempo Médio (s)"], marker="o", label="Otimizada"
 )
 axes[1].set_title("Tempo Médio de Execução vs r")
 axes[1].set_xlabel("Parâmetro r")
@@ -68,6 +94,38 @@ axes[1].legend()
 
 plt.tight_layout()
 plt.savefig(images_path + "comparacao_sp_tempo_opt_vs_normal.png")
+
+fig, axes = plt.subplots(1, 2, figsize=(14, 5))
+
+axes[0].plot(
+    df_10_30["r"], df_10_30["Iterações GRASP"], marker="o", label="Não Otimizada"
+)
+axes[0].plot(
+    df_10_30_opt["r"], df_10_30_opt["Iterações GRASP"], marker="o", label="Otimizada"
+)
+axes[0].set_title("Iterações GRASP vs r")
+axes[0].set_xlabel("Parâmetro r")
+axes[0].set_ylabel("Iterações GRASP")
+axes[0].grid(True)
+axes[0].legend()
+
+axes[1].plot(
+    df_10_30["r"], df_10_30["Iterações Local Search"], marker="o", label="Não Otimizada"
+)
+axes[1].plot(
+    df_10_30_opt["r"],
+    df_10_30_opt["Iterações Local Search"],
+    marker="o",
+    label="Otimizada",
+)
+axes[1].set_title("Iterações Local Search vs r")
+axes[1].set_xlabel("Parâmetro r")
+axes[1].set_ylabel("Iterações Local Search")
+axes[1].grid(True)
+axes[1].legend()
+
+plt.tight_layout()
+plt.savefig(images_path + "comparacao_iterations_opt_vs_normal.png")
 
 # Comparação entre 10 runs de 30 segundos e 30 runs de 10 segundos (sem otimização)
 fig, axes = plt.subplots(1, 2, figsize=(14, 5))
