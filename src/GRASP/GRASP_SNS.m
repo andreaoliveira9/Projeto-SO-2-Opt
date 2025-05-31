@@ -102,7 +102,8 @@ function nodes = GreedyRandomized(G, D, n, r, Cmax)
     centrality = 1 ./ sum(D, 2)';
     
     % Seleção do primeiro nó: escolha randomizada entre os mais centrais
-    [~, sortedIndices] = sort(centrality);
+    [~, sortedIndices] = sort(centrality, 'descend');
+    
     rclSize = min(r, numNodes);
     rcl = sortedIndices(1:rclSize); % Lista restrita de candidatos
     selectedIdx = randi(rclSize);
