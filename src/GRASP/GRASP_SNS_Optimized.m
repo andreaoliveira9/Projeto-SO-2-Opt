@@ -62,7 +62,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
         end
         
         % FASE 1: Construção gulosa randomizada com pré-filtragem
-        currentNodes = GreedyRandomizedConstruction_Optimized(D, validNeighbors, ...
+        currentNodes = GreedyRandomized_Optimized(D, validNeighbors, ...
             centralityOrder, n, r, numNodes);
             
         if toc(globalStartTime) >= time
@@ -106,9 +106,9 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
     end
 end
 
-function nodes = GreedyRandomizedConstruction_Optimized(D, validNeighbors, ...
+function nodes = GreedyRandomized_Optimized(D, validNeighbors, ...
     centralityOrder, n, r, numNodes)
-% GreedyRandomizedConstruction_Optimized- Construção gulosa com pré-filtragem otimizada
+% GreedyRandomized_Optimized- Construção gulosa com pré-filtragem otimizada
 %
 % INPUTS:
 %   D               - matriz de distâncias pré-calculada

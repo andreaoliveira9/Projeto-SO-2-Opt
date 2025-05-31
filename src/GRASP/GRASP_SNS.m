@@ -44,7 +44,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, t
         end
     
         % FASE 1: Construção gulosa randomizada
-        currentNodes = GreedyRandomizedConstruction(G, D, n, r, Cmax);
+        currentNodes = GreedyRandomized(G, D, n, r, Cmax);
         if toc(globalStartTime) >= time
             break;
         end
@@ -81,8 +81,8 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, t
 end
 
 
-function nodes = GreedyRandomizedConstruction(G, D, n, r, Cmax)
-% GreedyRandomizedConstruction - Construção gulosa randomizada para seleção de nós servidor
+function nodes = GreedyRandomized(G, D, n, r, Cmax)
+% GreedyRandomized - Construção gulosa randomizada para seleção de nós servidor
 %
 % INPUTS:
 %   G     - grafo da rede
