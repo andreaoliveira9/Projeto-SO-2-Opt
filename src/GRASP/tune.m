@@ -32,19 +32,19 @@ for idx = 1:length(rValues)
     fprintf('\n--- r = %d ---\n', r);
 
     for i = 1:numRuns
-        [score, nodes, totalIterations, localSeachIterations, foundTime] = GRASP_SNS(G, time, n, r, Cmax);
+        [score, nodes, iterations, searchIterations, foundTime] = GRASP_SNS(G, time, n, r, Cmax);
         [avgSP, ~] = PerfSNS(G, nodes);
         scores(i) = avgSP;
         times(i) = foundTime;
-        totalIterations(i) = totalIterations;
-        localSeachIterations(i) = localSeachIterations;
-        fprintf('Run %d: SP = %.4f | Tempo = %.2fs | Iterações Totais = %d | Iterações Local Search = %d\n', i, avgSP, foundTime, totalIterations, localSeachIterations);
+        totalIterations(i) = iterations;
+        localSeachIterations(i) = searchIterations;
+        fprintf('Run %d: SP = %.4f | Tempo = %.2fs | Iterações Totais = %d | Iterações Local Search = %d\n', i, avgSP, foundTime, iterations, searchIterations);
     end
 
     results(idx, :) = [r, min(scores), mean(scores), max(scores), mean(times), mean(totalIterations), mean(localSeachIterations)];
 
-    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f\n', ...
-        r, min(scores), mean(scores), max(scores), mean(times));
+    fprintf('Resumo para r = %d -> Min: %.4f | Média: %.4f | Max: %.4f | Tempo médio: %.4f | Iterações Totais: %.4f | Iterações Local Search: %.4f \n', ...
+        r, min(scores), mean(scores), max(scores), mean(times), mean(totalIterations), mean(localSeachIterations));
 end
 
 % --- Tabela final ---
