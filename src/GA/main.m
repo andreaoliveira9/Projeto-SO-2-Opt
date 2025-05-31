@@ -5,9 +5,9 @@ clear; clc;
 
 % --- Parâmetros do problema ---
 n = 12;                 % número de nós a selecionar
-populationSize = 50;    % tamanho da população
-mutationProb = 0.1;     % probabilidade de mutação
-elitistParam = 5;       % parâmetro elitista (qtd de pais que sobrevivem)
+populationSize = 100;   % tamanho da população
+mutationProb = 0.2;     % probabilidade de mutação
+elitistParam = 10;      % parâmetro elitista (qtd de pais que sobrevivem)
 time = 30;              % tempo de execução por execução
 Cmax = 1000;            % limite máximo permitido entre pares de servidores
 numRuns = 10;
