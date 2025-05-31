@@ -38,7 +38,7 @@ for idx = 1:length(rValues)
         times(i) = foundTime;
         GRASPIterations(i) = iterations;
         localSeachIterations(i) = searchIterations;
-        fprintf('Run %d: SP = %.4f | Tempo = %.2fs | Iterações GRASP = %d | Iterações Local Search = %d\n', i, avgSP, foundTime, iterations, searchIterations);
+        fprintf('Run %d: SP = %.4f | Tempo = %.2fs\n', i, avgSP, foundTime);
     end
 
     results(idx, :) = [r, min(scores), mean(scores), max(scores), mean(times), mean(GRASPIterations), mean(localSeachIterations)];
