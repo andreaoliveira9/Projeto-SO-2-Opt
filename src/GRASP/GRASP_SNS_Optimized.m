@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax, seed)
+function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFoundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax, seed)
 % GRASP_SNS_Optimized - Versão otimizada do algoritmo GRASP para seleção de nós servidor
 %
 % INPUTS:
@@ -24,6 +24,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;
+    localSeachIterations = 0;
     bestFoundTime = 0;
     
     globalStartTime = tic;
@@ -95,7 +96,8 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS_Opti
             LocalSearch_SA_HC_Optimized(G, D, currentNodes, currentScore, Cmax, ...
             validNeighbors, scoreCache, globalStartTime, time);
         
-        totalIterations = totalIterations + localIterations;
+        totalIterations = totalIterations + 1;
+        localSeachIterations = localSeachIterations + localIterations;
         
         % Atualização da melhor solução global
         if currentScore < bestScore

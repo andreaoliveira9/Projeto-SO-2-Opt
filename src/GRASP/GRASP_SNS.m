@@ -1,4 +1,4 @@
-function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
+function [bestScore, bestNodes, totalIterations, localSeachIterations, bestFoundTime] = GRASP_SNS(G, time, n, r, Cmax, seed)
 % GRASP_SNS - Algoritmo GRASP para seleção de nós servidor com restrição de distância máxima
 %
 % INPUTS:
@@ -24,6 +24,7 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, t
     bestScore = Inf;
     bestNodes = [];
     totalIterations = 0;
+    localSeachIterations = 0;
     bestFoundTime = 0;
 
     % Controle de tempo e cálculo prévio das distâncias
@@ -66,10 +67,11 @@ function [bestScore, bestNodes, totalIterations, bestFoundTime] = GRASP_SNS(G, t
         end
 
         % FASE 2: Busca local com Hill Climbing
-        [currentNodes, currentScore, localIterations, ~] = ...
+        [currentNodes, currentScore, localIterations] = ...
             LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, globalStartTime, time);
 
-        totalIterations = totalIterations + localIterations;
+        totalIterations = totalIterations + 1;
+        localSeachIterations = localIterations + 1;
 
         % Atualização da melhor solução encontrada
         if currentScore < bestScore
@@ -180,7 +182,7 @@ function nodes = GreedyRandomized(G, D, n, r, Cmax)
     end
 end
 
-function [bestNodes, bestScore, localIterations, improved] = ...
+function [bestNodes, bestScore, localIterations] = ...
     LocalSearch_SA_HC(G, currentNodes, currentScore, Cmax, globalStartTime, maxTime)
 % LocalSearch_SA_HC - Busca local usando Hill Climbing com movimentos de swap
 %

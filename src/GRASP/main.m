@@ -22,21 +22,25 @@ allScores = zeros(1, numRuns);
 allMaxSP = zeros(1, numRuns);
 allTimes = zeros(1, numRuns);
 allSolutions = zeros(numRuns, n);
+allIterations = zeros(1, numRuns);
+allLocalSearchIterations = zeros(1, numRuns);
 
 fprintf('Executando GRASP %d vezes...\n', numRuns);
 
 for i = 1:numRuns
     fprintf('\n--- Execução %d ---\n', i);
-    [score, nodes, ~, foundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax);
+    [score, nodes, totalIterations, localSeachIterations, foundTime] = GRASP_SNS_Optimized(G, time, n, r, Cmax);
     [avgSP, maxSP] = PerfSNS(G, nodes);
 
     allScores(i) = avgSP;
     allMaxSP(i) = maxSP;
     allTimes(i) = foundTime;
     allSolutions(i, :) = nodes;
+    allIterations(i) = totalIterations;
+    allLocalSearchIterations(i) = localSeachIterations;
 
-    fprintf('Média SP: %.4f | Max SP: %.4f | Tempo: %.2fs\n', ...
-            avgSP, maxSP, foundTime);
+    fprintf('Média SP: %.4f | Max SP: %.4f | Tempo: %.2fs | Iterações Totais: %d | Iterações Local Search: %d\n', ...
+            avgSP, maxSP, foundTime, totalIterations, localSeachIterations);
 end
 
 % --- Estatísticas ---
@@ -47,6 +51,8 @@ fprintf('Média função objetivo: %.4f\n', mean(allScores));
 fprintf('Valor mínimo: %.4f\n', min(allScores));
 fprintf('Valor máximo: %.4f\n', max(allScores));
 fprintf('Tempo médio até melhor solução: %.2fs\n', mean(allTimes));
+fprintf('Iterações totais: %.4f\n', mean(allIterations));
+fprintf('Iterações Local Search: %.4f\n', mean(allLocalSearchIterations));
 
 % --- Melhor solução encontrada ---
 [~, bestIdx] = min(allScores);
