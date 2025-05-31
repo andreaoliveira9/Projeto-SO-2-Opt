@@ -11,7 +11,7 @@ Run 7: SP = 146.7500 | Tempo = 12.11s
 Run 8: SP = 146.7500 | Tempo = 11.17s
 Run 9: SP = 146.7500 | Tempo = 10.64s
 Run 10: SP = 146.7500 | Tempo = 11.57s
-Resumo para r = 1 -> Min: 146.7500 | Média: 146.7500 | Max: 146.7500 | Tempo médio: 11.4771
+Resumo para r = 1 -> Min: 146.7500 | Média: 146.7500 | Max: 146.7500 | Tempo médio: 11.4771 | Iterações GRASP: 2.0000 | Iterações Local Search: 7.5000 
 
 --- r = 2 ---
 Run 1: SP = 145.7000 | Tempo = 19.47s
@@ -24,7 +24,7 @@ Run 7: SP = 143.6350 | Tempo = 23.44s
 Run 8: SP = 146.2250 | Tempo = 9.23s
 Run 9: SP = 145.5550 | Tempo = 25.87s
 Run 10: SP = 143.0850 | Tempo = 21.85s
-Resumo para r = 2 -> Min: 143.0850 | Média: 144.1965 | Max: 146.2250 | Tempo médio: 17.0547
+Resumo para r = 2 -> Min: 143.0850 | Média: 144.1965 | Max: 146.2250 | Tempo médio: 17.0547 | Iterações GRASP: 2.0000 | Iterações Local Search: 8.6000 
 
 --- r = 3 ---
 Run 1: SP = 144.8900 | Tempo = 9.52s
@@ -37,7 +37,7 @@ Run 7: SP = 143.4050 | Tempo = 11.32s
 Run 8: SP = 143.4050 | Tempo = 21.17s
 Run 9: SP = 143.0850 | Tempo = 21.56s
 Run 10: SP = 143.0850 | Tempo = 9.46s
-Resumo para r = 3 -> Min: 143.0850 | Média: 143.6445 | Max: 144.8900 | Tempo médio: 15.1324
+Resumo para r = 3 -> Min: 143.0850 | Média: 143.6445 | Max: 144.8900 | Tempo médio: 15.1324 | Iterações GRASP: 2.0000 | Iterações Local Search: 8.8000 
 
 --- r = 5 ---
 Run 1: SP = 144.5200 | Tempo = 23.88s
@@ -50,7 +50,7 @@ Run 7: SP = 143.4050 | Tempo = 26.76s
 Run 8: SP = 143.2800 | Tempo = 22.11s
 Run 9: SP = 147.1050 | Tempo = 25.85s
 Run 10: SP = 144.8100 | Tempo = 21.37s
-Resumo para r = 5 -> Min: 143.1600 | Média: 144.0255 | Max: 147.1050 | Tempo médio: 21.0520
+Resumo para r = 5 -> Min: 143.1600 | Média: 144.0255 | Max: 147.1050 | Tempo médio: 21.0520 | Iterações GRASP: 2.0000 | Iterações Local Search: 7.4000 
 
 --- r = 7 ---
 Run 1: SP = 147.4550 | Tempo = 19.37s
@@ -63,7 +63,7 @@ Run 7: SP = 143.4050 | Tempo = 23.71s
 Run 8: SP = 143.6350 | Tempo = 11.35s
 Run 9: SP = 146.1700 | Tempo = 28.54s
 Run 10: SP = 146.7550 | Tempo = 11.29s
-Resumo para r = 7 -> Min: 143.1600 | Média: 145.1085 | Max: 147.4550 | Tempo médio: 16.6975
+Resumo para r = 7 -> Min: 143.1600 | Média: 145.1085 | Max: 147.4550 | Tempo médio: 16.6975 | Iterações GRASP: 2.0000 | Iterações Local Search: 5.0000 
 
 --- r = 10 ---
 Run 1: SP = 147.4300 | Tempo = 10.03s
@@ -76,7 +76,7 @@ Run 7: SP = 143.5450 | Tempo = 30.00s
 Run 8: SP = 144.6950 | Tempo = 24.54s
 Run 9: SP = 146.1200 | Tempo = 9.91s
 Run 10: SP = 147.1050 | Tempo = 12.23s
-Resumo para r = 10 -> Min: 143.0850 | Média: 145.2255 | Max: 147.4300 | Tempo médio: 17.9619
+Resumo para r = 10 -> Min: 143.0850 | Média: 145.2255 | Max: 147.4300 | Tempo médio: 17.9619 | Iterações GRASP: 1.9000 | Iterações Local Search: 7.0000 
 
 --- r = 20 ---
 Run 1: SP = 144.6950 | Tempo = 23.92s
@@ -89,7 +89,7 @@ Run 7: SP = 144.2450 | Tempo = 20.99s
 Run 8: SP = 146.7900 | Tempo = 10.84s
 Run 9: SP = 143.4050 | Tempo = 26.98s
 Run 10: SP = 143.7650 | Tempo = 30.00s
-Resumo para r = 20 -> Min: 143.0850 | Média: 144.3765 | Max: 146.7900 | Tempo médio: 20.6110
+Resumo para r = 20 -> Min: 143.0850 | Média: 144.3765 | Max: 146.7900 | Tempo médio: 20.6110 | Iterações GRASP: 1.9000 | Iterações Local Search: 7.3000 
 
 --- r = 50 ---
 Run 1: SP = 147.0550 | Tempo = 14.20s
@@ -102,16 +102,16 @@ Run 7: SP = 144.8900 | Tempo = 13.33s
 Run 8: SP = 143.0850 | Tempo = 25.73s
 Run 9: SP = 145.4450 | Tempo = 27.09s
 Run 10: SP = 144.8750 | Tempo = 23.30s
-Resumo para r = 50 -> Min: 143.0850 | Média: 145.8900 | Max: 147.6650 | Tempo médio: 20.0566
+Resumo para r = 50 -> Min: 143.0850 | Média: 145.8900 | Max: 147.6650 | Tempo médio: 20.0566 | Iterações GRASP: 1.8000 | Iterações Local Search: 8.3000 
 
-==================== Resultados Finais ====================
- r |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s)
-------------------------------------------------------------
- 1 |   146.7500 |     146.7500 |  146.7500 |          11.48
- 2 |   143.0850 |     144.1965 |  146.2250 |          17.05
- 3 |   143.0850 |     143.6445 |  144.8900 |          15.13
- 5 |   143.1600 |     144.0255 |  147.1050 |          21.05
- 7 |   143.1600 |     145.1085 |  147.4550 |          16.70
-10 |   143.0850 |     145.2255 |  147.4300 |          17.96
-20 |   143.0850 |     144.3765 |  146.7900 |          20.61
-50 |   143.0850 |     145.8900 |  147.6650 |          20.06
+========================================== Resultados Finais ===========================================
+ r |   Min SP   |   Média SP   |   Max SP   | Tempo Médio (s) | Iterações GRASP | Iterações Local Search
+--------------------------------------------------------------------------------------------------------
+ 1 |   146.7500 |     146.7500 |  146.7500 |          11.48   | 2.00            | 7.50
+ 2 |   143.0850 |     144.1965 |  146.2250 |          17.05   | 2.00            | 8.60
+ 3 |   143.0850 |     143.6445 |  144.8900 |          15.13   | 2.00            | 8.80
+ 5 |   143.1600 |     144.0255 |  147.1050 |          21.05   | 2.00            | 7.40
+ 7 |   143.1600 |     145.1085 |  147.4550 |          16.70   | 2.00            | 5.00
+10 |   143.0850 |     145.2255 |  147.4300 |          17.96   | 1.90            | 7.00
+20 |   143.0850 |     144.3765 |  146.7900 |          20.61   | 1.90            | 7.30
+50 |   143.0850 |     145.8900 |  147.6650 |          20.06   | 1.80            | 8.30
