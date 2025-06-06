@@ -10,7 +10,7 @@ n = 12;
 time = 30;
 Cmax = 1000;
 numRuns = 10;
-rValues = [1, 2, 3, 5, 7, 10, 20, 50];
+rValues = [2, 3, 5, 7, 10, 20, 50];
 
 % --- Carregamento dos dados ---
 Nodes = load('Nodes200.txt');
