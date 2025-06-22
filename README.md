@@ -1,4 +1,4 @@
-# Projeto-SO-2-Opt
+# Projeto-SO-Opt
 Segundo projeto Simulação e Otimização
 
 Nota: 19
